@@ -11,7 +11,7 @@ public class App {
         this.str = str;
     }
 
-    public String getStr() {
+    String getStr() {
         return str;
     }
 
