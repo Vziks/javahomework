@@ -16,7 +16,7 @@ public class Task4Command implements Command {
 
     @Override
     public void execute() {
-        System.out.println((Math.abs(getTen() - getN()) > Math.abs(getTen() - getM())) ? "M closer" : "M closer");
+        System.out.println((Math.abs(getTen() - getN()) > Math.abs(getTen() - getM())) ? "M closer" : "N closer");
     }
 
     /**

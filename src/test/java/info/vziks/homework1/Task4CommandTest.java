@@ -22,7 +22,7 @@ public class Task4CommandTest {
         System.setOut(new PrintStream(outContent));
         Task4Command classTask4CommandTest = new Task4Command();
         classTask4CommandTest.execute();
-        assertEquals("M closer\n", outContent.toString());
+        assertEquals("N closer\n", outContent.toString());
     }
 
     @Test
