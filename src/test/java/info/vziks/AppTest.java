@@ -23,9 +23,7 @@ public class AppTest {
 
         System.setOut(new PrintStream(outContent));
 
-        App classUnderTest = new App("Hello world");
-
-        classUnderTest.main(args);
+        App.main(args);
         assertEquals("Hello world\n", outContent.toString());
     }
 

@@ -16,7 +16,11 @@ public class Task4Command implements Command {
 
     @Override
     public void execute() {
-        System.out.println((Math.abs(getTen() - getN()) > Math.abs(getTen() - getM())) ? "M closer" : "N closer");
+        if (getM() == getTen() || getN() == getTen()) {
+            System.out.println("M or N equals " + Integer.toString(getTen()));
+        } else {
+            System.out.println(Math.abs(getTen() - getN()) > Math.abs(getTen() - getM()) ? "M closer" : "N closer");
+        }
     }
 
     /**

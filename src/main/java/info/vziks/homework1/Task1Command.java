@@ -1,5 +1,8 @@
 package info.vziks.homework1;
 
+
+import info.vziks.homework1.exceptions.Task1CommandExeption;
+
 import java.util.Random;
 
 /**
@@ -9,11 +12,33 @@ import java.util.Random;
  */
 public class Task1Command implements Command {
 
-    private Random rand = new Random(47);
+    private Random rand;
 
-    private int height = rand.nextInt(100);
-    private int length = rand.nextInt(100);
-    private int width = rand.nextInt(100);
+    private int height;
+    private int length;
+    private int width;
+
+    public Task1Command(Random rand, int height, int length, int width) throws Task1CommandExeption {
+        if (height <= 0 || length <= 0 || width <= 0) {
+            throw new Task1CommandExeption();
+        }
+        this.rand = rand;
+        this.height = height;
+        this.length = length;
+        this.width = width;
+    }
+
+
+    public Task1Command() throws Task1CommandExeption {
+//        this.rand = new Random(11166);
+        this.rand = new Random(47);
+        this.height = rand.nextInt(100);
+        this.length = rand.nextInt(100);
+        this.width = rand.nextInt(100);
+        if (height <= 0 || length <= 0 || width <= 0) {
+            throw new Task1CommandExeption();
+        }
+    }
 
     @Override
     public void execute() {

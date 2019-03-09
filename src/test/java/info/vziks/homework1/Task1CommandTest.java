@@ -1,5 +1,6 @@
 package info.vziks.homework1;
 
+import info.vziks.homework1.exceptions.Task1CommandExeption;
 import org.junit.Test;
 
 import java.util.Random;
@@ -14,7 +15,7 @@ import static org.junit.Assert.*;
 public class Task1CommandTest {
 
     @Test
-    public void testTask1CommandEquals() {
+    public void testTask1CommandEquals() throws Task1CommandExeption {
         Task1Command classTask1CommandTest = new Task1Command();
 
         Random rand = new Random(47);
@@ -27,7 +28,7 @@ public class Task1CommandTest {
     }
 
     @Test
-    public void testTask1CommandRandomEquals() {
+    public void testTask1CommandRandomEquals() throws Task1CommandExeption {
         Task1Command classTask1CommandTest = new Task1Command();
 
         Random rand = new Random(1);
@@ -39,6 +40,37 @@ public class Task1CommandTest {
         int width = rand.nextInt(50);
 
         assertEquals(9522, classTask1CommandTest.getSurfaceArea(height, length, width));
+    }
+
+
+    @Test
+    public void testTask1CommandRandomExeption() throws Task1CommandExeption {
+        boolean thrown = false;
+        Random rand = new Random(11166);
+        Task1Command classTask1CommandTest;
+
+        try {
+            classTask1CommandTest = new Task1Command(
+                    rand,
+                    rand.nextInt(100),
+                    rand.nextInt(100),
+                    rand.nextInt(100));
+        } catch (Task1CommandExeption e) {
+            thrown = true;
+        }
+        assertTrue(thrown);
+    }
+
+
+    @Test(expected = Task1CommandExeption.class)
+    public void testTask1CommandRandomExeptionExpected() throws Task1CommandExeption {
+        Random rand = new Random(11166);
+        Task1Command classTask1CommandTest = new Task1Command(
+                rand,
+                rand.nextInt(100),
+                rand.nextInt(100),
+                rand.nextInt(100));
+
     }
 
 }

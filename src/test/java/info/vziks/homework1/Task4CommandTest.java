@@ -42,4 +42,23 @@ public class Task4CommandTest {
 
         assertEquals("M closer\n", outContent.toString());
     }
+
+    @Test
+    public void testTask4CommandOneEquals() {
+        final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+
+        System.setOut(new PrintStream(outContent));
+        Task4Command classTask4CommandTest = new Task4Command();
+
+        Random rand = new Random(1);
+        classTask4CommandTest.setRand(rand);
+        classTask4CommandTest.setTen(20);
+        classTask4CommandTest.setN(classTask4CommandTest.getTen());
+        classTask4CommandTest.setM(classTask4CommandTest.getTen() + rand.nextInt(40 - classTask4CommandTest.getTen()));
+
+        classTask4CommandTest.execute();
+
+        assertEquals("M or N equals 20\n", outContent.toString());
+    }
+
 }
