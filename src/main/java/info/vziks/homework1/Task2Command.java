@@ -25,7 +25,6 @@ public class Task2Command implements Command {
 
     @Override
     public void execute() {
-
         System.out.println("Unoccupied square " + remainderSquare(squarePlotSize(getPlotSize()), getGardenBeX(), getGardenBedY()));
     }
 
