@@ -9,7 +9,7 @@ import java.util.Arrays;
  */
 public class Task6Command implements Command {
 
-    private int[] numbers = {2089, 774, 613};
+    private int[] numbers = {208, 774, 613};
 
     @Override
     public void execute() {
@@ -69,11 +69,7 @@ public class Task6Command implements Command {
      * @return the max with recursive
      */
     public int getMaxWithRecursive(int number) {
-        if (number == 0) return 0;
-        int lastNum = number % 10;
-        int otherDigits = number / 10;
-        int recursiveLN = getMaxWithRecursive(otherDigits);
-        return Math.max(lastNum, recursiveLN);
+        return number == 0 ? 0 : Math.max(number % 10, getMaxWithRecursive(number / 10));
     }
 
     /**
