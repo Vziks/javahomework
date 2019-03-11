@@ -13,6 +13,7 @@ public class Task6Command implements Command {
 
     @Override
     public void execute() {
+
         for (int i = 0; i < getNumbers().length; i++) {
             System.out.printf("At %d, the highest number is %d with getMaxWithByte function\n", getNumbers()[i], getMaxWithByte(getNumbers()[i]));
         }
@@ -20,8 +21,12 @@ public class Task6Command implements Command {
         for (int i = 0; i < getNumbers().length; i++) {
             System.out.printf("At %d, the highest number is %d with getMaxWithString function\n", getNumbers()[i], getMaxWithString(getNumbers()[i]));
         }
-    }
 
+        for (int i = 0; i < getNumbers().length; i++) {
+            System.out.printf("At %d, the highest number is %d with getMaxWithRecursive function\n", getNumbers()[i], getMaxWithRecursive(getNumbers()[i]));
+        }
+
+    }
 
     /**
      * Gets max with byte.
@@ -40,7 +45,6 @@ public class Task6Command implements Command {
         return maxDigit;
     }
 
-
     /**
      * Gets max with string.
      *
@@ -56,6 +60,16 @@ public class Task6Command implements Command {
         Arrays.sort(tempArray);
 
         return Character.getNumericValue(tempArray[tempArray.length - 1]);
+    }
+
+    /**
+     * Gets max with recursive.
+     *
+     * @param number the number
+     * @return the max with recursive
+     */
+    public int getMaxWithRecursive(int number) {
+        return number == 0 ? 0 : Math.max(number % 10, getMaxWithRecursive(number / 10));
     }
 
     /**

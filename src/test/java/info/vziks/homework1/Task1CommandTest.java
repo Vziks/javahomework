@@ -44,13 +44,12 @@ public class Task1CommandTest {
 
 
     @Test
-    public void testTask1CommandRandomExeption() throws Task1CommandExeption {
+    public void testTask1CommandRandomExeption() {
         boolean thrown = false;
         Random rand = new Random(11166);
-        Task1Command classTask1CommandTest;
 
         try {
-            classTask1CommandTest = new Task1Command(
+            new Task1Command(
                     rand,
                     rand.nextInt(100),
                     rand.nextInt(100),
@@ -65,8 +64,8 @@ public class Task1CommandTest {
     @Test(expected = Task1CommandExeption.class)
     public void testTask1CommandRandomExeptionExpected() throws Task1CommandExeption {
         Random rand = new Random(11166);
-        Task1Command classTask1CommandTest = new Task1Command(
-                rand,
+        new Task1Command(
+                new Random(11166),
                 rand.nextInt(100),
                 rand.nextInt(100),
                 rand.nextInt(100));
