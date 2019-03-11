@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 /**
  * Class Task1CommandTest
  *
- * @author Anton Prokhorov <vziks@live.ru>
+ * @author Anton Prokhorov
  */
 public class Task1CommandTest {
 

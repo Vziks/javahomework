@@ -6,7 +6,7 @@ import java.util.Random;
 /**
  * Class Task5Command
  *
- * @author Anton Prokhorov <vziks@live.ru>
+ * @author Anton Prokhorov
  */
 public class Task5Command implements Command {
 

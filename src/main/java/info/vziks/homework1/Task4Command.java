@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * Class Task4Command
  *
- * @author Anton Prokhorov <vziks@live.ru>
+ * @author Anton Prokhorov
  */
 public class Task4Command implements Command {
 

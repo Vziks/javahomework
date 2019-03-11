@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
 /**
  * Unit test for simple App.
  *
- * @author Anton Prokhorov <vziks@live.ru>
+ * @author Anton Prokhorov
  */
 public class AppTest {
 

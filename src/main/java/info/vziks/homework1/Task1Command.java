@@ -8,7 +8,7 @@ import java.util.Random;
 /**
  * Class Task1
  *
- * @author Anton Prokhorov <vziks@live.ru>
+ * @author Anton Prokhorov
  */
 public class Task1Command implements Command {
 

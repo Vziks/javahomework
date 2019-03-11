@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * Class Task6CommandTest
  *
- * @author Anton Prokhorov <vziks@live.ru>
+ * @author Anton Prokhorov
  */
 public class Task6CommandTest {
 

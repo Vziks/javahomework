@@ -6,14 +6,13 @@ import info.vziks.homework1.exceptions.Task1CommandExeption;
 /**
  * Class HomeWork1
  *
- * @author Anton Prokhorov <vziks@live.ru>
+ * @author Anton Prokhorov
  */
 public class HomeWork1 {
 
     /**
-     * The entry point of application.
-     *
      * @param args the input arguments
+     * @throws Task1CommandExeption Invalid argument Task1Command
      */
     public static void main(String[] args) throws Task1CommandExeption {
 
