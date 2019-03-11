@@ -3,7 +3,7 @@ package info.vziks.homework1;
 /**
  * Class Task3Command
  *
- * @author Anton Prokhorov <vziks@live.ru>
+ * @author Anton Prokhorov
  */
 public class Task3Command implements Command {
 

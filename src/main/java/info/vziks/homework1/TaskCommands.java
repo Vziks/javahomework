@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Class TaskCommands
  *
- * @author Anton Prokhorov <vziks@live.ru>
+ * @author Anton Prokhorov
  */
 class TaskCommands {
 

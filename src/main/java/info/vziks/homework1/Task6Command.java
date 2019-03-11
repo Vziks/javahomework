@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * Class Task6Command
  *
- * @author Anton Prokhorov <vziks@live.ru>
+ * @author Anton Prokhorov
  */
 public class Task6Command implements Command {
 

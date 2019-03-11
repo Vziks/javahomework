@@ -9,7 +9,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * Class Task3CommandTest
  *
- * @author Anton Prokhorov <vziks@live.ru>
+ * @author Anton Prokhorov
  */
 public class Task3CommandTest {
 
