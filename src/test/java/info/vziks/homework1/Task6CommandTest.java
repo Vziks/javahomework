@@ -29,6 +29,7 @@ public class Task6CommandTest {
         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
             assertEquals(entry.getValue().intValue(), classTask6CommandTest.getMaxWithByte(entry.getKey()));
             assertEquals(entry.getValue().intValue(), classTask6CommandTest.getMaxWithString(entry.getKey()));
+            assertEquals(entry.getValue().intValue(), classTask6CommandTest.getMaxWithRecursive(entry.getKey()));
         }
     }
 

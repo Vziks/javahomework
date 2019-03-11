@@ -9,10 +9,11 @@ import java.util.Arrays;
  */
 public class Task6Command implements Command {
 
-    private int[] numbers = {208, 774, 613};
+    private int[] numbers = {2089, 774, 613};
 
     @Override
     public void execute() {
+
         for (int i = 0; i < getNumbers().length; i++) {
             System.out.printf("At %d, the highest number is %d with getMaxWithByte function\n", getNumbers()[i], getMaxWithByte(getNumbers()[i]));
         }
@@ -20,8 +21,12 @@ public class Task6Command implements Command {
         for (int i = 0; i < getNumbers().length; i++) {
             System.out.printf("At %d, the highest number is %d with getMaxWithString function\n", getNumbers()[i], getMaxWithString(getNumbers()[i]));
         }
-    }
 
+        for (int i = 0; i < getNumbers().length; i++) {
+            System.out.printf("At %d, the highest number is %d with getMaxWithRecursive function\n", getNumbers()[i], getMaxWithRecursive(getNumbers()[i]));
+        }
+
+    }
 
     /**
      * Gets max with byte.
@@ -40,7 +45,6 @@ public class Task6Command implements Command {
         return maxDigit;
     }
 
-
     /**
      * Gets max with string.
      *
@@ -56,6 +60,20 @@ public class Task6Command implements Command {
         Arrays.sort(tempArray);
 
         return Character.getNumericValue(tempArray[tempArray.length - 1]);
+    }
+
+    /**
+     * Gets max with recursive.
+     *
+     * @param number the number
+     * @return the max with recursive
+     */
+    public int getMaxWithRecursive(int number) {
+        if (number == 0) return 0;
+        int lastNum = number % 10;
+        int otherDigits = number / 10;
+        int recursiveLN = getMaxWithRecursive(otherDigits);
+        return Math.max(lastNum, recursiveLN);
     }
 
     /**
