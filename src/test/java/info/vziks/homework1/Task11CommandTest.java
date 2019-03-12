@@ -1,6 +1,7 @@
 package info.vziks.homework1;
 
-import info.vziks.homework1.exceptions.Task1CommandExeption;
+
+import info.vziks.exceptions.TaskCommandException;
 import org.junit.Test;
 
 import java.util.Random;
@@ -8,15 +9,15 @@ import java.util.Random;
 import static org.junit.Assert.*;
 
 /**
- * Class Task1CommandTest
+ * Class Task11CommandTest
  *
  * @author Anton Prokhorov
  */
-public class Task1CommandTest {
+public class Task11CommandTest {
 
     @Test
-    public void testTask1CommandEquals() throws Task1CommandExeption {
-        Task1Command classTask1CommandTest = new Task1Command();
+    public void testTask11CommandEquals() throws TaskCommandException {
+        Task11Command classTask11CommandTest = new Task11Command();
 
         Random rand = new Random(47);
 
@@ -24,47 +25,47 @@ public class Task1CommandTest {
         int length = rand.nextInt(100);
         int width = rand.nextInt(100);
 
-        assertEquals(27398, classTask1CommandTest.getSurfaceArea(height, length, width));
+        assertEquals(27398, classTask11CommandTest.getSurfaceArea(height, length, width));
     }
 
     @Test
-    public void testTask1CommandRandomEquals() throws Task1CommandExeption {
-        Task1Command classTask1CommandTest = new Task1Command();
+    public void testTask11CommandRandomEquals() throws TaskCommandException {
+        Task11Command classTask11CommandTest = new Task11Command();
 
         Random rand = new Random(1);
 
-        classTask1CommandTest.setRand(rand);
+        classTask11CommandTest.setRand(rand);
 
         int height = rand.nextInt(50);
         int length = rand.nextInt(50);
         int width = rand.nextInt(50);
 
-        assertEquals(9522, classTask1CommandTest.getSurfaceArea(height, length, width));
+        assertEquals(9522, classTask11CommandTest.getSurfaceArea(height, length, width));
     }
 
 
     @Test
-    public void testTask1CommandRandomExeption() {
+    public void testTask11CommandRandomExeption() {
         boolean thrown = false;
         Random rand = new Random(11166);
 
         try {
-            new Task1Command(
+            new Task11Command(
                     rand,
                     rand.nextInt(100),
                     rand.nextInt(100),
                     rand.nextInt(100));
-        } catch (Task1CommandExeption e) {
+        } catch (TaskCommandException e) {
             thrown = true;
         }
         assertTrue(thrown);
     }
 
 
-    @Test(expected = Task1CommandExeption.class)
-    public void testTask1CommandRandomExeptionExpected() throws Task1CommandExeption {
+    @Test(expected = TaskCommandException.class)
+    public void testTask11CommandRandomExeptionExpected() throws TaskCommandException {
         Random rand = new Random(11166);
-        new Task1Command(
+        new Task11Command(
                 new Random(11166),
                 rand.nextInt(100),
                 rand.nextInt(100),

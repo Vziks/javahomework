@@ -1,4 +1,6 @@
-package info.vziks.homework1;
+package info.vziks;
+
+import info.vziks.Command;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +10,7 @@ import java.util.List;
  *
  * @author Anton Prokhorov
  */
-class TaskCommands {
+public class TaskCommands {
 
     private List<Command> commandList = new ArrayList<>();
 
@@ -17,14 +19,14 @@ class TaskCommands {
      *
      * @param command the command
      */
-    void addCommand(Command command) {
+    public void addCommand(Command command) {
         commandList.add(command);
     }
 
     /**
      * Run tasks.
      */
-    void runTasks() {
+    public void runTasks() {
         for (Command command : commandList) {
             command.execute();
         }

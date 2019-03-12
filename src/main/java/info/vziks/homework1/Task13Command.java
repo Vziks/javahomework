@@ -1,11 +1,13 @@
 package info.vziks.homework1;
 
+import info.vziks.Command;
+
 /**
- * Class Task3Command
+ * Class Task13Command
  *
  * @author Anton Prokhorov
  */
-public class Task3Command implements Command {
+public class Task13Command implements Command {
 
     private int ellipseSquareDm = 15;
 

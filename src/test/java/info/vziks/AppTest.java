@@ -16,27 +16,27 @@ import static org.junit.Assert.*;
  */
 public class AppTest {
 
-    @Test
-    public void testAppOutPut() {
-        String[] args = null;
-        final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-
-        System.setOut(new PrintStream(outContent));
-
-        App.main(args);
-        assertEquals("Hello world\n", outContent.toString());
-    }
-
-    @Test
-    public void testAppGetStr() {
-        App classUnderTest = new App("Hello world");
-        assertNotNull("app should have a greeting", classUnderTest.getStr());
-    }
-
-
-    @Test
-    public void testAppContentEquals() {
-        App classUnderTest = new App("Content Equals");
-        assertTrue(classUnderTest.getStr().contentEquals("Content Equals"));
-    }
+//    @Test
+//    public void testAppOutPut() {
+//        String[] args = null;
+//        final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+//
+//        System.setOut(new PrintStream(outContent));
+//
+//        App.main(args);
+//        assertEquals("Hello world\n", outContent.toString());
+//    }
+//
+//    @Test
+//    public void testAppGetStr() {
+//        App classUnderTest = new App("Hello world");
+//        assertNotNull("app should have a greeting", classUnderTest.getStr());
+//    }
+//
+//
+//    @Test
+//    public void testAppContentEquals() {
+//        App classUnderTest = new App("Content Equals");
+//        assertTrue(classUnderTest.getStr().contentEquals("Content Equals"));
+//    }
 }

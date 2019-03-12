@@ -1,23 +1,25 @@
 package info.vziks.homework1;
 
+import info.vziks.Command;
+
 /**
- * Class Task2Command
+ * Class Task12Command
  *
  * @author Anton Prokhorov
  */
-public class Task2Command implements Command {
+public class Task12Command implements Command {
 
     private int plotSize;
     private int gardenBeX;
     private int gardenBedY;
 
-    public Task2Command() {
+    public Task12Command() {
         this.plotSize = 10;
         this.gardenBeX = 15;
         this.gardenBedY = 25;
     }
 
-    public Task2Command(int plotSize, int gardenBeX, int gardenBedY) {
+    public Task12Command(int plotSize, int gardenBeX, int gardenBedY) {
         this.plotSize = plotSize;
         this.gardenBeX = gardenBeX;
         this.gardenBedY = gardenBedY;

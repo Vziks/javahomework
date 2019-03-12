@@ -11,17 +11,16 @@ import java.util.Random;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Class Task5CommandTest
+ * Class Task15CommandTest
  *
  * @author Anton Prokhorov
  */
-public class Task5CommandTest {
+public class Task15CommandTest {
 
     @Test
-    public void testTask5CommandRandomEquals() {
+    public void testTask15CommandRandomEquals() {
 
-
-        Task5Command classTask5CommandTest = new Task5Command();
+        Task15Command classTask15CommandTest = new Task15Command();
 
         Map<Integer, String> map = new HashMap<>();
         map.put(4, "The equation has no real roots!\n");
@@ -35,12 +34,12 @@ public class Task5CommandTest {
             System.setOut(new PrintStream(outContent));
 
             Random rand = new Random(entry.getKey());
-            classTask5CommandTest.setRand(rand);
-            classTask5CommandTest.setA(classTask5CommandTest.rnd());
-            classTask5CommandTest.setB(classTask5CommandTest.rnd());
-            classTask5CommandTest.setC(classTask5CommandTest.rnd());
+            classTask15CommandTest.setRand(rand);
+            classTask15CommandTest.setA(classTask15CommandTest.rnd());
+            classTask15CommandTest.setB(classTask15CommandTest.rnd());
+            classTask15CommandTest.setC(classTask15CommandTest.rnd());
 
-            classTask5CommandTest.execute();
+            classTask15CommandTest.execute();
 
             assertEquals(entry.getValue(), outContent.toString());
         }

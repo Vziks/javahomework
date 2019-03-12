@@ -1,21 +1,23 @@
 package info.vziks;
 
+import info.vziks.exceptions.TaskCommandException;
+import info.vziks.homework1.HomeWork1;
+import info.vziks.homework2.HomeWork2;
+
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
 /**
- * Hello world!
+ * Main class
  */
 public class App {
 
-    private String str;
-
-    App(String str) {
-        this.str = str;
-    }
-
-    String getStr() {
-        return str;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(new App("Hello world").getStr());
+    /**
+     * Entry point application
+     */
+    public static void main(String[] args) throws TaskCommandException {
+        HomeWork1.main(args);
+        HomeWork2.main(args);
     }
 }

@@ -9,15 +9,15 @@ import java.util.Map;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Class Task2CommandTest
+ * Class Task12CommandTest
  *
  * @author Anton Prokhorov
  */
-public class Task2CommandTest {
+public class Task12CommandTest {
 
     @Test
-    public void testTask2CommandEquals() {
-        Task2Command classTask2CommandTest = new Task2Command();
+    public void testTask12CommandEquals() {
+        Task12Command classTask12CommandTest = new Task12Command();
 
         Map<Pair<Integer, Integer>, Pair<Integer, Integer>> map = new HashMap<>();
         map.put(new Pair<>(10, 250), new Pair<>(15, 25));
@@ -28,7 +28,7 @@ public class Task2CommandTest {
         for (Map.Entry<Pair<Integer, Integer>, Pair<Integer, Integer>> entry : map.entrySet()) {
 
             assertEquals(
-                    classTask2CommandTest.remainderSquare(
+                    classTask12CommandTest.remainderSquare(
                             entry.getKey().getKey(),
                             entry.getValue().getKey(),
                             entry.getValue().getValue()

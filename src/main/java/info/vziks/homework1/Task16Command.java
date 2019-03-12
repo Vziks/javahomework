@@ -1,13 +1,15 @@
 package info.vziks.homework1;
 
+import info.vziks.Command;
+
 import java.util.Arrays;
 
 /**
- * Class Task6Command
+ * Class Task16Command
  *
  * @author Anton Prokhorov
  */
-public class Task6Command implements Command {
+public class Task16Command implements Command {
 
     private int[] numbers = {208, 774, 613};
 
