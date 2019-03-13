@@ -30,10 +30,9 @@ public class Task26Command implements Command {
     }
 
     public void countTickets() {
-
         int i;
         int count;
-        for (i = getStart(), count = 0; i < getStop(); i++) {
+        for (i = getStart(), count = 0; i <= getStop(); i++) {
             if (isEquality(i)) {
                 count++;
             }

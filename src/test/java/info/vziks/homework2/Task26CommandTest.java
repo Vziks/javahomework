@@ -14,7 +14,7 @@ public class Task26CommandTest {
     @Test
     public void testTask26Command() {
         int[][] arrayTest = {
-                {1_000, 999_999, 55250},
+                {1_000, 999_999, 55251},
                 {20_000, 50_000, 1243}
         };
 
