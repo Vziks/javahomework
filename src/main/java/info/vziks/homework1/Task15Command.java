@@ -1,14 +1,16 @@
 package info.vziks.homework1;
 
+import info.vziks.Command;
+
 import java.math.BigDecimal;
 import java.util.Random;
 
 /**
- * Class Task5Command
+ * Class Task15Command
  *
  * @author Anton Prokhorov
  */
-public class Task5Command implements Command {
+public class Task15Command implements Command {
 
     private Random rand = new Random(47289482);
 //        private Random rand = new Random(4);

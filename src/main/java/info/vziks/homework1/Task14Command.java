@@ -1,13 +1,15 @@
 package info.vziks.homework1;
 
+import info.vziks.Command;
+
 import java.util.Random;
 
 /**
- * Class Task4Command
+ * Class Task14Command
  *
  * @author Anton Prokhorov
  */
-public class Task4Command implements Command {
+public class Task14Command implements Command {
 
     private Random rand = new Random(47);
     private double m = 8.5;

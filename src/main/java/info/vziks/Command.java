@@ -1,4 +1,4 @@
-package info.vziks.homework1;
+package info.vziks;
 
 /**
  * Interface Command

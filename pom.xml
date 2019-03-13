@@ -6,7 +6,7 @@
 
     <groupId>info.vziks</groupId>
     <artifactId>javahomework</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.1</version>
 
     <name>javahomework</name>
     <!-- FIXME change it to the project's website -->
@@ -59,7 +59,7 @@
                     <configuration>
                         <archive>
                             <manifest>
-                                <mainClass>info.vziks.homework1.HomeWork1</mainClass>
+                                <mainClass>info.vziks.App</mainClass>
                             </manifest>
                         </archive>
                     </configuration>

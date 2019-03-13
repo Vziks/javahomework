@@ -26,7 +26,7 @@ dependencies {
 }
 
 group = 'info.vziks'
-version = '1.0-SNAPSHOT'
+version = '1.0.1'
 description = 'javahomework'
 sourceCompatibility = '1.8'
 
@@ -37,7 +37,7 @@ tasks.withType(JavaCompile) {
 jar {
     manifest {
         attributes(
-                'Main-Class': 'info.vziks.homework1.HomeWork1'
+                'Main-Class': 'info.vziks.App'
         )
     }
 }
