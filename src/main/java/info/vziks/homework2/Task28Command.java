@@ -1,6 +1,6 @@
 package info.vziks.homework2;
 
-import info.vziks.Command;
+import info.vziks.utils.Command;
 
 /**
  * Class Task28Command

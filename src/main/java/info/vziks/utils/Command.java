@@ -1,4 +1,4 @@
-package info.vziks;
+package info.vziks.utils;
 
 /**
  * Interface Command

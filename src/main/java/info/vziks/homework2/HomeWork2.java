@@ -1,31 +1,28 @@
 package info.vziks.homework2;
 
 
-import info.vziks.TaskCommands;
+import info.vziks.utils.HomeWorkMain;
 
 /**
  * Class HomeWork2
  *
  * @author Anton Prokhorov
  */
-public class HomeWork2 {
+public class HomeWork2 extends HomeWorkMain {
 
     /**
      * @param args the input arguments
      */
     public static void main(String[] args) {
-
-        TaskCommands tasks = new TaskCommands();
-
-        tasks.addCommand(new Task21Command());
-        tasks.addCommand(new Task22Command());
-        tasks.addCommand(new Task23Command());
-        tasks.addCommand(new Task24Command());
-        tasks.addCommand(new Task25Command());
-        tasks.addCommand(new Task26Command());
-        tasks.addCommand(new Task27Command());
-        tasks.addCommand(new Task28Command());
-        tasks.addCommand(new Task29Command());
-        tasks.runTasks();
+        getTasks().addCommand(new Task21Command());
+        getTasks().addCommand(new Task22Command());
+        getTasks().addCommand(new Task23Command());
+        getTasks().addCommand(new Task24Command());
+        getTasks().addCommand(new Task25Command());
+        getTasks().addCommand(new Task26Command());
+        getTasks().addCommand(new Task27Command());
+        getTasks().addCommand(new Task28Command());
+        getTasks().addCommand(new Task29Command());
+        getTasks().runTasks();
     }
 }

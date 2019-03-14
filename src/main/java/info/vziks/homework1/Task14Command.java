@@ -1,6 +1,6 @@
 package info.vziks.homework1;
 
-import info.vziks.Command;
+import info.vziks.utils.Command;
 
 import java.util.Random;
 

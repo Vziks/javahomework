@@ -1,6 +1,4 @@
-package info.vziks;
-
-import info.vziks.Command;
+package info.vziks.utils;
 
 import java.util.ArrayList;
 import java.util.List;

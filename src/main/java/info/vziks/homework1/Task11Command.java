@@ -1,7 +1,7 @@
 package info.vziks.homework1;
 
 
-import info.vziks.Command;
+import info.vziks.utils.Command;
 import info.vziks.exceptions.TaskCommandException;
 
 import java.util.Random;
@@ -20,10 +20,10 @@ public class Task11Command implements Command {
     private int width;
 
     /**
-     * @param rand Random object
+     * @param rand   Random object
      * @param height Height cuboid. Must be positive.
      * @param length Length cuboid. Must be positive.
-     * @param width Width cuboid. Must be positive.
+     * @param width  Width cuboid. Must be positive.
      * @throws TaskCommandException if the height, length, width is not positive
      */
     public Task11Command(Random rand, int height, int length, int width) throws TaskCommandException {
