@@ -20,6 +20,7 @@ public class Task34Command implements Command {
 
     @Override
     public void execute() {
+
         Scanner stdIn = new Scanner(System.in).useDelimiter("\n");
 
         int arrLength;
@@ -35,11 +36,16 @@ public class Task34Command implements Command {
 
         init(arrLength);
         fillArr();
+        for (int item:
+             getTempArr()) {
+            System.out.print(item + " ");
+        }
+
         calculations();
         conditions();
     }
 
-    private void conditions() {
+    public void conditions() {
         System.out.println((getLeftSum() == getRightSum() ? "\n" +
                 "The sums of the modules are equal" : (getLeftSum() > getRightSum() ? "\n" +
                 "The sum of the modules of the left half is greater than the right" : "\n" +
@@ -60,7 +66,6 @@ public class Task34Command implements Command {
     public void fillArr() {
         for (int i = 0; i < getTempArr().length; i++) {
             getTempArr()[i] = rnd.nextInt(11) - 5;
-            System.out.print(getTempArr()[i] + " ");
         }
     }
 
