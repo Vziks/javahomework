@@ -59,4 +59,12 @@ public class Task33Command implements Command {
     public void setTempArr(int[] tempArr) {
         this.tempArr = tempArr;
     }
+
+    public Random getRnd() {
+        return rnd;
+    }
+
+    public void setRnd(Random rnd) {
+        this.rnd = rnd;
+    }
 }

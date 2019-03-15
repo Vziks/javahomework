@@ -35,16 +35,16 @@ public class Task32Command implements Command {
     }
 
     public void normalOrder() {
+        int i = 0;
         for (int item :
                 getTempArr()) {
-            System.out.print(item + " ");
+            System.out.print(item + (i++ != getTempArr().length - 1 ? " " : ""));
         }
     }
 
     public void reverseOrder() {
-        System.out.println();
         for (int i = getTempArr().length - 1; i >= 0; i--) {
-            System.out.print(getTempArr()[i] + " ");
+            System.out.print(getTempArr()[i] + (i != 0 ? " " : ""));
         }
     }
 
