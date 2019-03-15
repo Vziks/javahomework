@@ -26,7 +26,7 @@ public class Task35Command implements Command {
         String insertToString = getStdIn().next();
 
         int start = sourceString.indexOf(replaceToString);
-        while (start > 0) {
+        while (start > -1) {
             sourceString.delete(start, start + replaceToString.length());
             sourceString.insert(start, insertToString);
             start = sourceString.indexOf(replaceToString);
