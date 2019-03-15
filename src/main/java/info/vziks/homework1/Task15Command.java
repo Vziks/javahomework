@@ -1,6 +1,6 @@
 package info.vziks.homework1;
 
-import info.vziks.Command;
+import info.vziks.utils.Command;
 
 import java.math.BigDecimal;
 import java.util.Random;
@@ -13,8 +13,6 @@ import java.util.Random;
 public class Task15Command implements Command {
 
     private Random rand = new Random(47289482);
-//        private Random rand = new Random(4);
-//    private Random rand = new Random(47);
 
     private final int min = -75; // Минимальное число для диапазона
     private final int max = 75; // Максимальное число для диапазона

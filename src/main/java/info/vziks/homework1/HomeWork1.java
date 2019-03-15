@@ -1,7 +1,6 @@
 package info.vziks.homework1;
 
-
-import info.vziks.TaskCommands;
+import info.vziks.utils.HomeWorkMain;
 import info.vziks.exceptions.TaskCommandException;
 
 /**
@@ -9,23 +8,19 @@ import info.vziks.exceptions.TaskCommandException;
  *
  * @author Anton Prokhorov
  */
-public class HomeWork1 {
+public class HomeWork1 extends HomeWorkMain {
 
     /**
      * @param args the input arguments
      * @throws TaskCommandException Invalid argument Task1Command
      */
     public static void main(String[] args) throws TaskCommandException {
-
-        TaskCommands tasks = new TaskCommands();
-
-        tasks.addCommand(new Task11Command());
-        tasks.addCommand(new Task12Command());
-        tasks.addCommand(new Task13Command());
-        tasks.addCommand(new Task14Command());
-        tasks.addCommand(new Task15Command());
-        tasks.addCommand(new Task16Command());
-
-        tasks.runTasks();
+        getTasks().addCommand(new Task11Command());
+        getTasks().addCommand(new Task12Command());
+        getTasks().addCommand(new Task13Command());
+        getTasks().addCommand(new Task14Command());
+        getTasks().addCommand(new Task15Command());
+        getTasks().addCommand(new Task16Command());
+        getTasks().runTasks();
     }
 }

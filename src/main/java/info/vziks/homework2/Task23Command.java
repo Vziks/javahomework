@@ -1,10 +1,7 @@
 package info.vziks.homework2;
 
-import info.vziks.Command;
+import info.vziks.utils.Command;
 import info.vziks.exceptions.TaskCommandException;
-
-import java.math.BigInteger;
-import java.util.HashMap;
 
 /**
  * Class Task23Command

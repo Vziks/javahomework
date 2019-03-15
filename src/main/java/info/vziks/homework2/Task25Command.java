@@ -1,7 +1,6 @@
 package info.vziks.homework2;
 
-import info.vziks.Command;
-import info.vziks.TaskCommands;
+import info.vziks.utils.Command;
 
 import java.util.LinkedList;
 import java.util.List;
