@@ -22,5 +22,9 @@ public class Task41Command implements Command {
         list.insertAfter(5, 2);
         list.insertBefore(9, 5);
         System.out.println(list);
+
+//        for (Object integer : list)
+//            System.out.println(integer);
+
     }
 }

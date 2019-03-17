@@ -16,9 +16,9 @@ public class App {
      * Entry point application
      */
     public static void main(String[] args) throws TaskCommandException {
-//        HomeWork1.main(args);
-//        HomeWork2.main(args);
-//        HomeWork3.main(args);
+        HomeWork1.main(args);
+        HomeWork2.main(args);
+        HomeWork3.main(args);
         HomeWork4.main(args);
     }
 }

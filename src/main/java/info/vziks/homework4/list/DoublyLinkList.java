@@ -3,7 +3,9 @@ package info.vziks.homework4.list;
 
 import info.vziks.exceptions.TaskCommandException;
 
-public class DoublyLinkList {
+import java.util.Iterator;
+
+public class DoublyLinkList<T> implements Iterable<T> {
     private Node first, last;
     private int count;
 
@@ -112,7 +114,7 @@ public class DoublyLinkList {
     public void deleteByIndex(int index) throws TaskCommandException {
 
         if (index > getCount()) {
-            throw new TaskCommandException();
+            throw new TaskCommandException("invalid index " + index);
         }
 
         Node node = first;
@@ -163,4 +165,17 @@ public class DoublyLinkList {
         return count;
     }
 
+
+    public Node getHead() {
+        return first;
+    }
+
+    public Node getTail() {
+        return last;
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new DoublyLinkListItertor<T>(this);
+    }
 }
