@@ -86,7 +86,6 @@ public class DoublyLinkList {
             }
             if (node != null) {
                 swapNode(node);
-                count--;
             }
         }
     }
@@ -107,6 +106,7 @@ public class DoublyLinkList {
             node.getPrev().setNext(node.getNext());
             node.getNext().setPrev(node.getPrev());
         }
+        count--;
     }
 
     public void deleteByIndex(int index) throws TaskCommandException {
@@ -122,7 +122,6 @@ public class DoublyLinkList {
             y++;
         }
         swapNode(node);
-        count--;
     }
 
 
