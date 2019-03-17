@@ -31,10 +31,12 @@ public class Task31Command implements Command {
     }
 
     public void horizontalArray() {
-        int i = 0;
+        int i;
+        i = 0;
+
         for (int item :
                 getTempArr()) {
-            System.out.print(item + (i++ != getTempArr().length - 1 ? " ":""));
+            System.out.print(item + (i++ != getTempArr().length - 1 ? " " : ""));
         }
 
     }

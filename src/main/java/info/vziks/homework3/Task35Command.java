@@ -33,7 +33,6 @@ public class Task35Command implements Command {
         }
 
         System.out.println(sourceString);
-
     }
 
     public Scanner getStdIn() {
