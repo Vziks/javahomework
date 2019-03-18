@@ -37,12 +37,14 @@ public class Task37Command implements Command {
         Matcher matcher = pattern.matcher(sourceString);
         int start = 0;
         while (matcher.find(start)) {
-            String value = sourceString.toString().substring(matcher.start(), matcher.end());
-            setArrTemp(Task32Command.addElement(getArrTemp(), Integer.parseInt(value)));
+            setArrTemp(
+                    Task32Command.addElement(
+                            getArrTemp(),
+                            Integer.parseInt(sourceString.toString().substring(matcher.start(), matcher.end())))
+            );
             start = matcher.end();
         }
     }
-
 
     public int[] getArrTemp() {
         return arrTemp;

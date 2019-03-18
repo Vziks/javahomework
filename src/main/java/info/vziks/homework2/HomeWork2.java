@@ -1,6 +1,7 @@
 package info.vziks.homework2;
 
 
+import info.vziks.exceptions.TaskCommandException;
 import info.vziks.utils.HomeWorkMain;
 
 /**
@@ -13,7 +14,7 @@ public class HomeWork2 extends HomeWorkMain {
     /**
      * @param args the input arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws TaskCommandException {
         getTasks().addCommand(new Task21Command());
         getTasks().addCommand(new Task22Command());
         getTasks().addCommand(new Task23Command());

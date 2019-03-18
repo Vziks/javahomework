@@ -26,7 +26,7 @@ public class Task33Command implements Command {
     }
 
     public void init() {
-        for (int i = 0, r = 0; i < tempArr.length; i++, r = rnd.nextInt(10)) {
+        for (int i = 0, r = 0; i < tempArr.length; i++, r = getRnd().nextInt(10)) {
             tempArr[i] = r;
         }
         setTempArr(tempArr);

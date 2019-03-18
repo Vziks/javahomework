@@ -81,15 +81,8 @@ public class Task34Command implements Command {
         return leftSum;
     }
 
-    public void setLeftSum(int leftSum) {
-        this.leftSum = leftSum;
-    }
-
     public int getRightSum() {
         return rightSum;
     }
 
-    public void setRightSum(int rightSum) {
-        this.rightSum = rightSum;
-    }
 }
