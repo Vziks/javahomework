@@ -1,14 +1,18 @@
 package info.vziks.homework4.list;
 
 public class Node {
-    private Integer data;
+    private Object data;
     private Node next;
     private Node prev;
 
-    public Node(int data, Node next, Node prev) {
+    public Node(Object data, Node next, Node prev) {
         this.data = data;
         this.next = next;
         this.prev = prev;
+    }
+
+    public Node(Object data) {
+        this.data = data;
     }
 
     public Node getNext() {
@@ -27,11 +31,11 @@ public class Node {
         this.prev = prev;
     }
 
-    public Integer getData() {
+    public Object getData() {
         return data;
     }
 
-    public void setData(Integer data) {
+    public void setData(Object data) {
         this.data = data;
     }
 }

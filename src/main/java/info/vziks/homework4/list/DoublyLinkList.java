@@ -5,7 +5,8 @@ import info.vziks.exceptions.TaskCommandException;
 
 import java.util.Iterator;
 
-public class DoublyLinkList<T> implements Iterable<T> {
+public class DoublyLinkList<T> implements Iterable<T>, Stack, Queue, List {
+
     private Node first, last;
     private int count;
 
@@ -15,9 +16,9 @@ public class DoublyLinkList<T> implements Iterable<T> {
         this.count = 0;
     }
 
-    public void add(int i) {
-
-        Node node = new Node(i, null, last);
+    @Override
+    public void add(Node node) {
+        node.setPrev(last);
         if (isEmpty()) {
             first = last = node;
         } else {
@@ -27,11 +28,43 @@ public class DoublyLinkList<T> implements Iterable<T> {
         count++;
     }
 
-    public void insertAfter(int fData, int cData) {
+    @Override
+    public void remove(Node node) {
+        Node nodeR = first;
+
+        while (nodeR != null) {
+            if (nodeR.getData() == node.getData()) {
+                Node newNode = new Node(node, nodeR, nodeR.getPrev());
+                nodeR.getPrev().setNext(newNode);
+                nodeR.setPrev(newNode);
+                count++;
+            }
+            nodeR = nodeR.getNext();
+        }
+    }
+
+
+    public void delete(Node i) {
+        Node nodeR = first;
+
+        while (nodeR.getNext() != null) {
+            nodeR = nodeR.getNext();
+            Node node = first;
+            while (node != null && node.getData() != i.getData()) {
+                node = node.getNext();
+            }
+            if (node != null) {
+                swapNode(node);
+            }
+        }
+    }
+
+    public void insertAfter(Object fData, int cData) {
 
         Node nodeR = first;
 
         while (nodeR != null) {
+//            if (nodeR.getData() == fData) {
             if (nodeR.getData() == fData) {
                 if (nodeR.getNext() == null) {
                     Node newNode = new Node(cData, null, nodeR);
@@ -49,7 +82,7 @@ public class DoublyLinkList<T> implements Iterable<T> {
         }
     }
 
-    public void insertBefore(int fData, int cData) {
+    public void insertBefore(Object fData, int cData) {
 
         Node nodeR = first;
 
@@ -77,20 +110,20 @@ public class DoublyLinkList<T> implements Iterable<T> {
         count--;
     }
 
-    public void delete(int i) {
-        Node nodeR = first;
-
-        while (nodeR.getNext() != null) {
-            nodeR = nodeR.getNext();
-            Node node = first;
-            while (node != null && node.getData() != i) {
-                node = node.getNext();
-            }
-            if (node != null) {
-                swapNode(node);
-            }
-        }
-    }
+//    public void delete(int i) {
+//        Node nodeR = first;
+//
+//        while (nodeR.getNext() != null) {
+//            nodeR = nodeR.getNext();
+//            Node node = first;
+//            while (node != null && node.getData() != i) {
+//                node = node.getNext();
+//            }
+//            if (node != null) {
+//                swapNode(node);
+//            }
+//        }
+//    }
 
     private void swapNode(Node node) {
 
@@ -127,6 +160,7 @@ public class DoublyLinkList<T> implements Iterable<T> {
     }
 
 
+    @Override
     public boolean isEmpty() {
         return getFirst() == null;
     }
@@ -178,4 +212,58 @@ public class DoublyLinkList<T> implements Iterable<T> {
     public Iterator<T> iterator() {
         return new DoublyLinkListItertor<T>(this);
     }
+
+    @Override
+    public Object popStack() {
+        Node save = getLast();
+        if (last.getPrev() != null) {
+            last.getPrev().setNext(null);
+            setLast(last.getPrev());
+        } else {
+            first = null;
+        }
+        count--;
+        return save.getData();
+    }
+
+    @Override
+    public void pushStack(Node node) {
+        if (isEmpty()) {
+            first = last = node;
+        } else {
+            last.setNext(node);
+            node.setPrev(last);
+            last = node;
+        }
+        count++;
+    }
+
+    @Override
+    public Object popQueue() {
+        Node save = getFirst();
+        if (first.getNext() != null) {
+            first.getNext().setPrev(null);
+            setFirst(first.getNext());
+        } else {
+            first = null;
+        }
+        count--;
+        return save.getData();
+    }
+
+    @Override
+    public void pushQueue(Node node) {
+        if (isEmpty()) {
+            first = last = node;
+        } else {
+
+            first.setPrev(node);
+            node.setNext(first);
+
+            first = node;
+        }
+        count++;
+    }
+
+
 }
