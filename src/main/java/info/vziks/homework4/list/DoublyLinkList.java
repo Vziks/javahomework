@@ -19,7 +19,7 @@ public class DoublyLinkList<T> implements Iterable<T>, Stack, Queue, List {
     @Override
     public void add(Node node) {
         node.setPrev(last);
-        if (isEmpty()) {
+        if (isEmpty(this)) {
             first = last = node;
         } else {
             last.setNext(node);
@@ -99,7 +99,7 @@ public class DoublyLinkList<T> implements Iterable<T>, Stack, Queue, List {
     }
 
     public void remove() {
-        if (!isEmpty()) {
+        if (!isEmpty(this)) {
             if (first == last) {
                 first = last = null;
             } else {
@@ -129,12 +129,12 @@ public class DoublyLinkList<T> implements Iterable<T>, Stack, Queue, List {
 
         if (node.getPrev() == null) {
             first = node.getNext();
-            if (!isEmpty()) {
+            if (!isEmpty(this)) {
                 first.setPrev(null);
             }
         } else if (node.getNext() == null) {
             last = node.getPrev();
-            if (!isEmpty()) {
+            if (!isEmpty(this)) {
                 last.setNext(null);
             }
         } else {
@@ -160,10 +160,10 @@ public class DoublyLinkList<T> implements Iterable<T>, Stack, Queue, List {
     }
 
 
-    @Override
-    public boolean isEmpty() {
-        return getFirst() == null;
-    }
+//    @Override
+//    public boolean isEmpty() {
+//        return getFirst() == null;
+//    }
 
     public Node getFirst() {
         return first;
@@ -228,7 +228,7 @@ public class DoublyLinkList<T> implements Iterable<T>, Stack, Queue, List {
 
     @Override
     public void pushStack(Node node) {
-        if (isEmpty()) {
+        if (isEmpty(this)) {
             first = last = node;
         } else {
             last.setNext(node);
@@ -253,7 +253,7 @@ public class DoublyLinkList<T> implements Iterable<T>, Stack, Queue, List {
 
     @Override
     public void pushQueue(Node node) {
-        if (isEmpty()) {
+        if (isEmpty(this)) {
             first = last = node;
         } else {
 
