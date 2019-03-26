@@ -6,6 +6,7 @@ import info.vziks.homework2.HomeWork2;
 import info.vziks.homework3.HomeWork3;
 import info.vziks.homework4.HomeWork4;
 import info.vziks.homework5.HomeWork5Main;
+import info.vziks.homework6.HomeWork6;
 
 
 /**
@@ -21,6 +22,7 @@ public class App {
 //        HomeWork2.main(args);
 //        HomeWork3.main(args);
 //        HomeWork4.main(args);
-        HomeWork5Main.main(args);
+//        HomeWork5Main.main(args);
+        HomeWork6.main(args);
     }
 }

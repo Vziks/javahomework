@@ -9,7 +9,6 @@ public class DoublyLinkList<T> implements Iterable<T>, Stack, Queue, List {
 
     private Node first, last;
     private int count;
-
     public DoublyLinkList() {
         this.first = null;
         this.last = null;
