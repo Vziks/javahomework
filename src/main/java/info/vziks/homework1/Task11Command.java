@@ -15,25 +15,22 @@ public class Task11Command implements Command {
 
     private Random rand;
 
-    private int height;
-    private int length;
-    private int width;
+    private int a;
+    private int b;
 
     /**
-     * @param rand   Random object
-     * @param height Height cuboid. Must be positive.
-     * @param length Length cuboid. Must be positive.
-     * @param width  Width cuboid. Must be positive.
-     * @throws TaskCommandException if the height, length, width is not positive
+     * @param rand Random object
+     * @param a    Height cuboid. Must be positive.
+     * @param b    Length cuboid. Must be positive.
+     * @throws TaskCommandException if the a, b equals zero
      */
-    public Task11Command(Random rand, int height, int length, int width) throws TaskCommandException {
-        if (height <= 0 || length <= 0 || width <= 0) {
+    public Task11Command(Random rand, int a, int b) throws TaskCommandException {
+        if (a == 0 || b == 0) {
             throw new TaskCommandException();
         }
         this.rand = rand;
-        this.height = height;
-        this.length = length;
-        this.width = width;
+        this.a = a;
+        this.b = b;
     }
 
     /**
@@ -41,10 +38,9 @@ public class Task11Command implements Command {
      */
     public Task11Command() throws TaskCommandException {
         this.rand = new Random(47);
-        this.height = rand.nextInt(100);
-        this.length = rand.nextInt(100);
-        this.width = rand.nextInt(100);
-        if (height <= 0 || length <= 0 || width <= 0) {
+        this.a = rand.nextInt(100);
+        this.b = rand.nextInt(100);
+        if (a == 0 || b == 0) {
             throw new TaskCommandException();
         }
     }
@@ -54,26 +50,23 @@ public class Task11Command implements Command {
      */
     @Override
     public void execute() {
-        System.out.printf("Surface area of a cuboid\nheight %d\nlength %d\nwidth %d\nequals = %d \n%s\n",
-                getHeight(),
-                getLength(),
-                getWidth(),
-                getSurfaceArea(getHeight(), getLength(), getWidth()),
-                (getWidth() > getHeight()) ? "Width is more than height" : "Height is greater than width"
+        System.out.printf("nod of a %d and b %d is %d\n",
+                getA(),
+                getB(),
+                getGcd(getA(), getB())
         );
     }
 
+    public int getGcd(int a, int b) {
+        int nod = 0;
+        for (int i = (a > b ? a : b); i > 0; i--) {
+            if (a % i == 0 && b % i == 0) {
+                nod = i;
+                break;
+            }
+        }
 
-    /**
-     * Gets surface area.
-     *
-     * @param height the height
-     * @param length the length
-     * @param width  the width
-     * @return the surface area
-     */
-    public int getSurfaceArea(int height, int length, int width) {
-        return (height * length + length * width + width * height) * 2;
+        return nod;
     }
 
     /**
@@ -94,57 +87,19 @@ public class Task11Command implements Command {
         this.rand = rand;
     }
 
-    /**
-     * Gets height.
-     *
-     * @return the height
-     */
-    public int getHeight() {
-        return height;
+    public int getA() {
+        return a;
     }
 
-    /**
-     * Sets height.
-     *
-     * @param height the height
-     */
-    public void setHeight(int height) {
-        this.height = height;
+    public void setA(int a) {
+        this.a = a;
     }
 
-    /**
-     * Gets length.
-     *
-     * @return the length
-     */
-    public int getLength() {
-        return length;
+    public int getB() {
+        return b;
     }
 
-    /**
-     * Sets length.
-     *
-     * @param length the length
-     */
-    public void setLength(int length) {
-        this.length = length;
-    }
-
-    /**
-     * Gets width.
-     *
-     * @return the width
-     */
-    public int getWidth() {
-        return width;
-    }
-
-    /**
-     * Sets width.
-     *
-     * @param width the width
-     */
-    public void setWidth(int width) {
-        this.width = width;
+    public void setB(int b) {
+        this.b = b;
     }
 }

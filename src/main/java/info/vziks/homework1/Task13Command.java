@@ -9,59 +9,48 @@ import info.vziks.utils.Command;
  */
 public class Task13Command implements Command {
 
-    private int ellipseSquareDm = 15;
+    private int[] array;
+    private int findSum;
+    private StringBuilder sb = new StringBuilder();
 
-    private int ellipseSquareSm = 600;
+    public Task13Command(int[] array, int findSum) {
+        this.array = array;
+        this.findSum = findSum;
+    }
 
-    /**
-     * Area difference int.
-     *
-     * @param ellSqDm  the ell sq dm
-     * @param ellSquSm the ell squ sm
-     * @return the int
-     */
-    public int areaDifference(int ellSqDm, int ellSquSm) {
-        return ellSqDm * 100 - ellSquSm;
+    public Task13Command() {
+        this.array = new int[]{2, 4, 3, 7, 2, 11, 4};
+        this.findSum = 7;
     }
 
     @Override
     public void execute() {
-        System.out.printf("Ring area %d\n", areaDifference(getEllipseSquareDm(), getEllipseSquareSm()));
+        System.out.println(find());
     }
 
-    /**
-     * Gets ellipse square dm.
-     *
-     * @return the ellipse square dm
-     */
-    public int getEllipseSquareDm() {
-        return ellipseSquareDm;
-    }
+    public String find() {
 
-    /**
-     * Gets ellipse square sm.
-     *
-     * @return the ellipse square sm
-     */
-    public int getEllipseSquareSm() {
-        return ellipseSquareSm;
-    }
+        int max_index;
+        int min_index;
 
-    /**
-     * Sets ellipse square dm.
-     *
-     * @param ellipseSquareDm the ellipse square dm
-     */
-    public void setEllipseSquareDm(int ellipseSquareDm) {
-        this.ellipseSquareDm = ellipseSquareDm;
-    }
+        for (int i = 0; i < array.length; i++) {
+            max_index = array.length - 1;
+            min_index = i;
+            while (min_index < max_index) {
+                if (array[min_index] + array[max_index - min_index] == findSum) {
+                    sb.append(String.format("{%d,%d}{%d+%d}",
+                            min_index,
+                            max_index - min_index,
+                            array[min_index],
+                            array[max_index - min_index]
+                    ));
 
-    /**
-     * Sets ellipse square sm.
-     *
-     * @param ellipseSquareSm the ellipse square sm
-     */
-    public void setEllipseSquareSm(int ellipseSquareSm) {
-        this.ellipseSquareSm = ellipseSquareSm;
+                }
+                max_index--;
+            }
+        }
+
+        return sb.toString();
+
     }
 }
