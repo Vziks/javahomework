@@ -21,11 +21,10 @@ public class Task11CommandTest {
 
         Random rand = new Random(47);
 
-        int height = rand.nextInt(100);
-        int length = rand.nextInt(100);
-        int width = rand.nextInt(100);
+        int a = rand.nextInt(100);
+        int b = rand.nextInt(100);
 
-        assertEquals(27398, classTask11CommandTest.getSurfaceArea(height, length, width));
+        assertEquals(1, classTask11CommandTest.getGcd(a, b));
     }
 
     @Test
@@ -36,11 +35,10 @@ public class Task11CommandTest {
 
         classTask11CommandTest.setRand(rand);
 
-        int height = rand.nextInt(50);
-        int length = rand.nextInt(50);
-        int width = rand.nextInt(50);
+        int a = rand.nextInt(100);
+        int b = rand.nextInt(100);
 
-        assertEquals(9522, classTask11CommandTest.getSurfaceArea(height, length, width));
+        assertEquals(1, classTask11CommandTest.getGcd(a, b));
     }
 
 
@@ -53,8 +51,8 @@ public class Task11CommandTest {
             new Task11Command(
                     rand,
                     rand.nextInt(100),
-                    rand.nextInt(100),
-                    rand.nextInt(100));
+                    rand.nextInt(100)
+            );
         } catch (TaskCommandException e) {
             thrown = true;
         }
@@ -68,8 +66,8 @@ public class Task11CommandTest {
         new Task11Command(
                 new Random(11166),
                 rand.nextInt(100),
-                rand.nextInt(100),
-                rand.nextInt(100));
+                rand.nextInt(100)
+        );
 
     }
 

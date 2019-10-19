@@ -9,56 +9,106 @@ import info.vziks.utils.Command;
  */
 public class Task12Command implements Command {
 
-    private int plotSize;
-    private int gardenBeX;
-    private int gardenBedY;
+    private Object obj;
+    private int to;
+    private int from;
+    private StringBuilder sb = new StringBuilder();
+
+    private char[] charArray = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
 
     public Task12Command() {
-        this.plotSize = 10;
-        this.gardenBeX = 15;
-        this.gardenBedY = 25;
+        this.to = 10;
+        this.from = 10;
     }
 
-    public Task12Command(int plotSize, int gardenBeX, int gardenBedY) {
-        this.plotSize = plotSize;
-        this.gardenBeX = gardenBeX;
-        this.gardenBedY = gardenBedY;
+    public Task12Command(Object obj, int to, int from) {
+        this.obj = obj;
+        this.to = to;
+        this.from = from;
+    }
+
+    public Task12Command(Object obj, int to) {
+        this.obj = obj;
+        this.to = to;
     }
 
     @Override
     public void execute() {
-        System.out.println("Unoccupied square " + remainderSquare(squarePlotSize(getPlotSize()), getGardenBeX(), getGardenBedY()));
+
+        setObj(20000);
+        setTo(8);
+
+
+        System.out.println("Result " + convert());
     }
 
-    public int remainderSquare(int squarePlotSize, int gardenBedY, int cardenBedY) {
-        return squarePlotSize % gardenBedY * cardenBedY;
+
+    /**
+     * @return String
+     */
+    public String convert() {
+
+        String str = String.valueOf(obj);
+
+        if (str != null && str.equals(obj)) {
+
+            char[] stringToCharArray = str.toCharArray();
+
+            int s = 0;
+            for (int i = 0; i < stringToCharArray.length; i++) {
+                s = (s + getArrayIndex(charArray, stringToCharArray[i]) * (int) Math.pow(from, stringToCharArray.length - i - 1));
+            }
+
+            sb.append(s);
+
+        } else {
+
+            int input = (int) obj;
+            while (input > 0) {
+                sb.append(charArray[input % to]);
+                input = input / to;
+            }
+            sb.reverse();
+        }
+
+        return sb.toString();
     }
 
-    public int squarePlotSize(int pltSz) {
-        return pltSz * 10 * 10;
+    private int getArrayIndex(char[] arr, int value) {
+
+        int k = 0;
+        for (int i = 0; i < arr.length; i++) {
+
+            if (arr[i] == value) {
+                k = i;
+                break;
+            }
+        }
+        return k;
     }
 
-    public int getPlotSize() {
-        return plotSize;
+
+    public Object getObj() {
+        return obj;
     }
 
-    public void setPlotSize(int plotSize) {
-        this.plotSize = plotSize;
+    public void setObj(Object obj) {
+        this.obj = obj;
     }
 
-    public int getGardenBeX() {
-        return gardenBeX;
+    public int getTo() {
+        return to;
     }
 
-    public void setGardenBeX(int gardenBeX) {
-        this.gardenBeX = gardenBeX;
+    public void setTo(int to) {
+        this.to = to;
     }
 
-    public int getGardenBedY() {
-        return gardenBedY;
+    public int getFrom() {
+        return from;
     }
 
-    public void setGardenBedY(int gardenBedY) {
-        this.gardenBedY = gardenBedY;
+    public void setFrom(int from) {
+        this.from = from;
     }
 }

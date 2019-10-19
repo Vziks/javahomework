@@ -17,18 +17,19 @@ public class Task13CommandTest {
     public void testTask13CommandEquals() {
         Task13Command classTask13CommandTest = new Task13Command();
 
-        assertEquals(1485, classTask13CommandTest.areaDifference(classTask13CommandTest.getEllipseSquareDm(), classTask13CommandTest.getEllipseSquareDm()));
+        assertEquals("{1,2}{4+3}{2,1}{3+4}", classTask13CommandTest.find());
     }
 
     @Test
     public void testTask13CommandRandomEquals() {
-        Task13Command classTask13CommandTest = new Task13Command();
-
         Random rand = new Random(1);
 
-        classTask13CommandTest.setEllipseSquareDm(rand.nextInt(30));
-        classTask13CommandTest.setEllipseSquareSm(rand.nextInt(700));
+        int[] arr = new int[10];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = rand.nextInt(10); // storing random integers in an array
+        }
+        Task13Command classTask13CommandTest = new Task13Command(arr, 8);
 
-        assertEquals(1412, classTask13CommandTest.areaDifference(classTask13CommandTest.getEllipseSquareDm(), classTask13CommandTest.getEllipseSquareSm()));
+        assertEquals("{0,3}{5+3}{4,5}{4+4}{4,4}{4+4}{5,4}{4+4}", classTask13CommandTest.find());
     }
 }
