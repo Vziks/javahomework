@@ -16,8 +16,7 @@ public class HomeWork1 extends HomeWorkMain {
      */
     public static void main(String[] args) throws TaskCommandException {
         getTasks().addCommand(new Task11Command());
-        getTasks().addCommand(new Task12Command());
-        getTasks().addCommand(new Task13Command());
+//        getTasks().addCommand(new Task12Command());
+//        getTasks().addCommand(new Task13Command());
         getTasks().runTasks();
-    }
-}
+    }}
