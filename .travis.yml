@@ -5,5 +5,6 @@ script:
   - ./gradlew check
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
   - mvn test -B
+dist: trusty
 after_success:
   - bash <(curl -s https://codecov.io/bash)
