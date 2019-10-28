@@ -19,5 +19,4 @@ public class HomeWork1 extends HomeWorkMain {
         getTasks().addCommand(new Task12Command());
         getTasks().addCommand(new Task13Command());
         getTasks().runTasks();
-    }
-}
+    }}
