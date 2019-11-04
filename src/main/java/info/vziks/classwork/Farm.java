@@ -9,8 +9,8 @@ class Farm {
     private int resource;
     private int dayToLive;
 
-    private List<WildAnimal> wildAnimals = new ArrayList<>();
-    private List<HomeAnimal> homeAnimals = new ArrayList<>();
+    private List<WildAnimal> wildAnimals = new ArrayList<WildAnimal>();
+    private List<HomeAnimal> homeAnimals = new ArrayList<HomeAnimal>();
 
     public Farm(Farmer farmer, int resource, int dayToLive) {
         this.farmer = farmer;
