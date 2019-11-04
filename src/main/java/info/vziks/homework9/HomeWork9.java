@@ -12,8 +12,8 @@ public class HomeWork9 extends HomeWorkMain {
      * @throws TaskCommandException Invalid argument HomeWork6
      */
     public static void main(String[] args) throws TaskCommandException, ParseException {
-//        getTasks().addCommand(new Task91Command());
-//        getTasks().addCommand(new Task92Command());
+        getTasks().addCommand(new Task91Command());
+        getTasks().addCommand(new Task92Command());
         getTasks().addCommand(new Task93Command());
         getTasks().runTasks();
     }
