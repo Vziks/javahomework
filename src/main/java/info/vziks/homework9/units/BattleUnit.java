@@ -10,11 +10,11 @@ abstract public class BattleUnit extends Unit implements AttackAble {
 
     public static BattleUnit getUnitByName(String name) {
         BattleUnit battleUnit = null;
-        if (name.equals("warrior")) {
+        if (name.toLowerCase().equals("warrior")) {
             battleUnit = new Warrior(faker.name().name(), faker.number().numberBetween(10, 15),  faker.number().numberBetween(10, 15), faker.number().numberBetween(10, 15));
-        } else if (name.equals("knight")) {
+        } else if (name.toLowerCase().equals("knight")) {
             battleUnit = new Knight(faker.name().name(), faker.number().numberBetween(10, 15),  faker.number().numberBetween(10, 15), faker.number().numberBetween(10, 15));
-        } else if (name.equals("doctor")) {
+        } else if (name.toLowerCase().equals("doctor")) {
             battleUnit = new Doctor(faker.name().name(), faker.number().numberBetween(10, 15),  faker.number().numberBetween(10, 15), faker.number().numberBetween(10, 15));
         }
         return battleUnit;

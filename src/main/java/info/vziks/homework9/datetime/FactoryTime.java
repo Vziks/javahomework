@@ -10,9 +10,9 @@ public class FactoryTime {
     private static Map<String, Pair<String, String>> map = new HashMap<>();
 
     public static void init() {
-        map.put("1 смена", new Pair<>("07:00", "15:00"));
-        map.put("2 смена", new Pair<>("15:00", "23:00"));
-        map.put("3 смена", new Pair<>("23:00", "07:00"));
+        map.put("1 смена1", new Pair<>("07:00", "15:00"));
+        map.put("2 смена2", new Pair<>("15:00", "23:00"));
+        map.put("3 смена3", new Pair<>("23:00", "07:00"));
     }
 
     public static String getShiftByTime() {
