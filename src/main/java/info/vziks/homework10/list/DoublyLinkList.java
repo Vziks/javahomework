@@ -3,7 +3,9 @@ package info.vziks.homework10.list;
 
 import info.vziks.exceptions.TaskCommandException;
 
-public class DoublyLinkList<T> {
+import java.util.Iterator;
+
+public class DoublyLinkList<T> implements Iterable<T>{
 
     private Node first, last;
     private int count;
@@ -89,6 +91,11 @@ public class DoublyLinkList<T> {
         }
     }
 
+    @Override
+    public Iterator<T> iterator() {
+        return new DoublyLinkListIterator<>(this);
+    }
+
 
     public Node getFirst() {
         return first;
@@ -114,7 +121,6 @@ public class DoublyLinkList<T> {
             if (node.getNext() != null) {
                 str.append(" ");
             }
-            ;
             node = node.getNext();
         }
         return str.toString();
