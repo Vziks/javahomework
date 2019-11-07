@@ -4,10 +4,31 @@ import info.vziks.exceptions.TaskCommandException;
 import info.vziks.homework10.list.DoublyLinkList;
 import info.vziks.utils.Command;
 
+import java.util.*;
+
 
 public class Task101Command implements Command {
     @Override
     public void execute() throws TaskCommandException {
+
+        Collection<String>
+                list = new LinkedList<>();
+
+        // A collection is created
+        Collection<String>
+                collect = new LinkedList<>();
+        collect.add("A");
+        collect.add("Computer");
+        collect.add("Portal");
+        collect.add("for");
+        collect.add("Geeks");
+
+        // Displaying the list
+        System.out.println("The LinkedList is: " + list);
+
+        // Appending the collection to the list
+        list.addAll(collect);
+
 
         DoublyLinkList<String> stringDoublyLinkList = new DoublyLinkList<>();
         stringDoublyLinkList.add("111");
@@ -22,6 +43,14 @@ public class Task101Command implements Command {
         stringDoublyLinkList.remove("666");
         System.out.println(stringDoublyLinkList);
 
+        System.out.println();
+        System.out.println("Iterator");
+        for (String item :
+                stringDoublyLinkList) {
+            System.out.println(item);
+        }
+        System.out.println();
+
         DoublyLinkList<Integer> integerDoublyLinkList = new DoublyLinkList<>();
         integerDoublyLinkList.add(111);
         integerDoublyLinkList.add(222);
@@ -34,6 +63,14 @@ public class Task101Command implements Command {
         System.out.println(integerDoublyLinkList);
         integerDoublyLinkList.remove(666);
         System.out.println(integerDoublyLinkList);
+
+        System.out.println();
+        System.out.println("Iterator");
+        for (Integer item :
+                integerDoublyLinkList) {
+            System.out.println(item);
+
+        }
 
     }
 }
