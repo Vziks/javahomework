@@ -11,25 +11,6 @@ public class Task101Command implements Command {
     @Override
     public void execute() throws TaskCommandException {
 
-        Collection<String>
-                list = new LinkedList<>();
-
-        // A collection is created
-        Collection<String>
-                collect = new LinkedList<>();
-        collect.add("A");
-        collect.add("Computer");
-        collect.add("Portal");
-        collect.add("for");
-        collect.add("Geeks");
-
-        // Displaying the list
-        System.out.println("The LinkedList is: " + list);
-
-        // Appending the collection to the list
-        list.addAll(collect);
-
-
         DoublyLinkList<String> stringDoublyLinkList = new DoublyLinkList<>();
         stringDoublyLinkList.add("111");
         stringDoublyLinkList.add("222");
