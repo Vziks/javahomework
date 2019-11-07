@@ -26,6 +26,12 @@ public class Task101Command implements Command {
 
         System.out.println();
         System.out.println("Iterator");
+
+        Iterator<String> stringIterator = stringDoublyLinkList.iterator();
+        while (stringIterator.hasNext()) {
+            System.out.println(stringIterator.next());
+        }
+
         for (String item :
                 stringDoublyLinkList) {
             System.out.println(item);
@@ -51,6 +57,11 @@ public class Task101Command implements Command {
                 integerDoublyLinkList) {
             System.out.println(item);
 
+        }
+
+        Iterator<Integer> integerIterator = integerDoublyLinkList.iterator();
+        while (integerIterator.hasNext()) {
+            System.out.println(integerIterator.next());
         }
 
     }
