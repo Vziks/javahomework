@@ -4,7 +4,7 @@ import java.util.Iterator;
 
 public class DoublyLinkListIterator<T> implements Iterator<T> {
 
-    Node current;
+    private Node current;
 
     public DoublyLinkListIterator(DoublyLinkList list) {
         current = list.getFirst();
