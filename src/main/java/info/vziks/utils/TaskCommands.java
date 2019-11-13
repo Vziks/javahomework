@@ -2,6 +2,7 @@ package info.vziks.utils;
 
 import info.vziks.exceptions.TaskCommandException;
 
+import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +28,7 @@ public class TaskCommands {
     /**
      * Run tasks.
      */
-    public void runTasks() throws TaskCommandException, ParseException {
+    public void runTasks() throws TaskCommandException, ParseException, IOException {
         for (Command command : commandList) {
             command.execute();
         }
