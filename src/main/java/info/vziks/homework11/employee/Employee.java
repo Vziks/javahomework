@@ -42,7 +42,7 @@ public class Employee {
             employees.add(new Employee(
                     names[rand.nextInt(names.length)],
                     companies[rand.nextInt(companies.length)],
-                    faker.number().numberBetween(100000, 200000) % 1000 * 1000,
+                    faker.number().numberBetween(100000, 200000) / 5000 * 5000,
                     rand.nextInt(60 - 21) + 21
             ));
         }

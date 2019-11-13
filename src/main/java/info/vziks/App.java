@@ -3,6 +3,7 @@ package info.vziks;
 import info.vziks.exceptions.TaskCommandException;
 import info.vziks.homework1.HomeWork1;
 
+import java.io.IOException;
 import java.text.ParseException;
 
 
@@ -14,7 +15,7 @@ public class App {
     /**
      * Entry point application
      */
-    public static void main(String[] args) throws TaskCommandException, ParseException {
+    public static void main(String[] args) throws TaskCommandException, ParseException, IOException {
         HomeWork1.main(args);
 //        HomeWork2.main(args);
 //        HomeWork3.main(args);

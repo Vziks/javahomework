@@ -1,7 +1,5 @@
 package info.vziks.homework11;
 
-import info.vziks.exceptions.TaskCommandException;
-import info.vziks.homework10.list.DoublyLinkList;
 import info.vziks.homework11.employee.Employee;
 import info.vziks.homework11.employee.comparator.EmployeeAgeComparator;
 import info.vziks.homework11.employee.comparator.EmployeeCompanyComparator;
@@ -23,21 +21,14 @@ public class Task111Command implements Command {
         List<Employee> employees1 = Employee.employeeGenerator(20);
         employees1.sort(employeeComparator1);
 
-        for (Employee item :
-                employees1) {
-            System.out.println(item);
-        }
-
+        outputList(employees1);
 
         Comparator<Employee> employeeNameComparator2 = new EmployeeNameComparator().thenComparing(new EmployeeSalaryComparator());
 
         List<Employee> employees2 = Employee.employeeGenerator(20);
         employees2.sort(employeeNameComparator2);
 
-        for (Employee item :
-                employees2) {
-            System.out.println(item);
-        }
+        outputList(employees2);
 
         Comparator<Employee> employeeNameComparator3 = new EmployeeNameComparator()
                 .thenComparing(
@@ -53,10 +44,14 @@ public class Task111Command implements Command {
         List<Employee> employees3 = Employee.employeeGenerator(100);
         employees3.sort(employeeNameComparator3);
 
+        outputList(employees3);
+
+    }
+
+    private static void outputList(List<Employee> employees) {
         for (Employee item :
-                employees3) {
+                employees) {
             System.out.println(item);
         }
-
     }
 }
