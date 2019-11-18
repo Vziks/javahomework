@@ -54,8 +54,7 @@ public class Parser {
                         integerSetHashMap.get(str.length()).add(str);
                     }
 
-                    tmp = str.toCharArray();
-                    for (char c : tmp) {
+                    for (char c : str.toCharArray()) {
                         if (!Parser.isNumeric(String.valueOf(c))) {
                             characterIntegerHashMap.put(c, (characterIntegerHashMap.containsKey(c) ? characterIntegerHashMap.get(c) + 1 : 1));
                         }
@@ -70,7 +69,13 @@ public class Parser {
 
     public void sort() {
         ValueComparator valueComparator = new ValueComparator(getStringIntegerHashMap());
+//        stringIntegerTreeMap = new TreeMap<String, Integer>((String o1, Integer o2) -> o2.get(o1));
         stringIntegerTreeMap = new TreeMap<>(valueComparator);
+
+//        Comparator<Person> c = Comparator
+//                .comparing(p -> p.getGroup())
+//                .thenComparing(p -> p.getAge())
+//                .thenComparing(p -> p.getName())
 
         stringIntegerTreeMap.putAll(stringIntegerHashMap);
     }

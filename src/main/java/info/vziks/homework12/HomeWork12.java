@@ -8,11 +8,13 @@ import java.text.ParseException;
 
 public class HomeWork12 extends HomeWorkMain {
 
+
     /**
-     * @param args the input arguments
-     * @throws TaskCommandException Invalid argument HomeWork6
+     * @param args
+     * @throws ParseException
+     * @throws IOException
      */
-    public static void main(String[] args) throws TaskCommandException, ParseException, IOException {
+    public static void main(String[] args) throws IOException, ParseException {
         getTasks().addCommand(new Task121Command());
         getTasks().runTasks();
     }

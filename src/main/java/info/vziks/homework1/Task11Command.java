@@ -24,7 +24,7 @@ public class Task11Command implements Command {
      * @param b    Length cuboid. Must be positive.
      * @throws TaskCommandException if the a, b equals zero
      */
-    public Task11Command(Random rand, int a, int b) throws TaskCommandException {
+    public Task11Command(Random rand, int a, int b) {
         if (a == 0 || b == 0) {
             throw new TaskCommandException();
         }
@@ -36,7 +36,7 @@ public class Task11Command implements Command {
     /**
      * @throws TaskCommandException if method nextInt() of class {@code Random} generate not positive value
      */
-    public Task11Command() throws TaskCommandException {
+    public Task11Command() {
         this.rand = new Random(47);
         this.a = rand.nextInt(100);
         this.b = rand.nextInt(100);

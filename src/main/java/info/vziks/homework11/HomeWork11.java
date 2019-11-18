@@ -12,7 +12,7 @@ public class HomeWork11 extends HomeWorkMain {
      * @param args the input arguments
      * @throws TaskCommandException Invalid argument HomeWork6
      */
-    public static void main(String[] args) throws TaskCommandException, ParseException, IOException {
+    public static void main(String[] args) throws ParseException, IOException {
         getTasks().addCommand(new Task111Command());
         getTasks().addCommand(new Task112Command());
         getTasks().runTasks();
