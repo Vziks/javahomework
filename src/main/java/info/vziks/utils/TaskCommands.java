@@ -28,7 +28,7 @@ public class TaskCommands {
     /**
      * Run tasks.
      */
-    public void runTasks() throws TaskCommandException, ParseException, IOException {
+    public void runTasks() throws IOException, ParseException {
         for (Command command : commandList) {
             command.execute();
         }

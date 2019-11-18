@@ -5,7 +5,7 @@ package info.vziks.exceptions;
  *
  * @author Anton Prokhorov
  */
-public class TaskCommandException extends Exception {
+public class TaskCommandException extends RuntimeException {
 
     public TaskCommandException() {
         super("Invalid argument");

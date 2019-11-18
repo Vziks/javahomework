@@ -17,7 +17,7 @@ public class HomeWork4 extends HomeWorkMain {
      * @param args the input arguments
      * @throws TaskCommandException Invalid argument HomeWork4
      */
-    public static void main(String[] args) throws TaskCommandException, ParseException, IOException {
+    public static void main(String[] args) throws ParseException, IOException {
         getTasks().addCommand(new Task41Command());
         getTasks().runTasks();
     }
