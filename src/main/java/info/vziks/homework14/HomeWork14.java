@@ -10,7 +10,8 @@ import java.text.ParseException;
 
 public class HomeWork14 extends HomeWorkMain {
     public static void main(String[] args) throws TaskCommandException, IOException, ParseException {
-        getTasks().addCommand(new Task141Command());
+//        getTasks().addCommand(new Task141Command());
+        getTasks().addCommand(new Task142Command());
         getTasks().runTasks();
     }
 }
