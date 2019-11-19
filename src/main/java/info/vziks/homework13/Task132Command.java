@@ -12,6 +12,12 @@ public class Task132Command implements Command {
     public void execute() throws TaskCommandException {
         App app = new App();
 
+        try {
+            Status.FILE_NOT_FOUND.getCheckInterface().throwException();
+        } catch (IOException io) {
+            App.printError(io);
+        }
+
         for (Status op : Status.values()) {
             try {
                 app.getHashMap().get(op).throwException();
