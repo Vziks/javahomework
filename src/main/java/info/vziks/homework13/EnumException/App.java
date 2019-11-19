@@ -1,7 +1,5 @@
 package info.vziks.homework13.EnumException;
 
-import java.util.jar.JarException;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
