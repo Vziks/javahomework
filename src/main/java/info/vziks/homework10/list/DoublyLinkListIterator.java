@@ -13,7 +13,7 @@ public class DoublyLinkListIterator<T> implements Iterator<T> {
     public boolean hasNext() {
         return current != null;
     }
-
+    @SuppressWarnings("unchecked")
     public T next() {
         T data = (T) current.getData();
         current = current.getNext();

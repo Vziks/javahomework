@@ -9,7 +9,7 @@ public class ArrayException {
 
     public static String str = "Hello from Jav";
 
-    ArrayList<RuntimeException> arrayListException = new ArrayList();
+    ArrayList<RuntimeException> arrayListException = new ArrayList<>();
 
     public ArrayException() {
         init();
