@@ -4,11 +4,13 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.*;
+import java.util.stream.Stream;
 
 public class Parser {
     private ClassLoader loader;
     private File file;
     private List<String> lines;
+    private Stream<String> lines1;
 
     private long fullSum = 0;
 
@@ -24,6 +26,8 @@ public class Parser {
         setLoader(Parser.class.getClassLoader());
         this.file = new File(Objects.requireNonNull(loader.getResource(fileName)).getFile());
         this.lines = Files.readAllLines(getFile().toPath());
+//        Files.lines(getFile().toPath()).forEach();
+//        this.lines1 =
     }
 
 
