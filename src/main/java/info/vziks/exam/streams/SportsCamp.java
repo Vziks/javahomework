@@ -21,4 +21,13 @@ public  class SportsCamp {
     public void setDay(Integer day) {
         this.day = day;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("SportsCamp{");
+        sb.append("name='").append(name).append('\'');
+        sb.append(", day=").append(day);
+        sb.append('}');
+        return sb.toString();
+    }
 }

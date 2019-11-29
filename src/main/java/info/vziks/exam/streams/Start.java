@@ -1,7 +1,7 @@
 package info.vziks.exam.streams;
 
-import java.util.Arrays;
-import java.util.Collection;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Start {
     public static void main(String[] args) {
@@ -15,7 +15,19 @@ public class Start {
          * Пример 3
          * Поиск имени самого большого по продолжительности нахождения в лагере
          */
-        String name = sport.stream().max((p1,p2) -> p1.getDay().compareTo(p2.getDay())).get().getName();
-        System.out.println("Name="+name);
+        String name = sport.stream().max(Comparator.comparing(SportsCamp::getDay)).get().getName();
+        System.out.println("Name=" + name);
+
+        ArrayList list = sport.stream().filter((x) -> x.getDay() > 5).filter((x) -> "Ira".equals(x.getName()))
+                .collect(Collectors.toCollection(ArrayList::new));
+
+//        Map<String,Integer> list1 = sport.stream().filter((x) -> x.getDay() > 5).filter((x) -> "Ira".equals(x.getName()))
+//                .collect(Collectors.toMap(ArrayList::new));
+//        ArrayList list = sport.stream().filter((x) -> x.getDay() > 5 & x.getDay() < 10)
+//                .collect(Collectors.toCollection(ArrayList::new));
+
+        System.out.println(list);
+
+
     }
 }
