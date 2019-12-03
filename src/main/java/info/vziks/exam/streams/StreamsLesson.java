@@ -18,22 +18,15 @@ public class StreamsLesson {
 
         Stream<String> fullText = Files.lines(file.toPath());
 
-        Map<String, Long> long11 = fullText.map(String::toLowerCase)
-                .flatMap(line -> Arrays.stream(
-                        line.replaceAll("\\p{Punct}", "").trim().split("\\s"))
-                )
-                .collect(
-                        Collectors.groupingBy(
-                                Function.identity(), Collectors.counting()
-                        ))
+        Map<String, Long> long11 =
+                fullText.map(String::toLowerCase)
+                .flatMap(line -> Arrays.stream(line.replaceAll("\\p{Punct}", "").trim().split("\\s")))
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
                 .entrySet()
                 .parallelStream()
                 .sorted((e1, e2) -> e2.getValue().compareTo(e1.getValue()))
                 .limit(10)
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
-
         System.out.println(long11);
-
-
     }
 }

@@ -71,7 +71,6 @@ public class AppFiles {
         }
     }
 
-
     public void mergeToFiles() throws IOException {
         FileInputStream out1 = new FileInputStream("out1.txt");
         FileInputStream out2 = new FileInputStream("out2.txt");
