@@ -6,7 +6,6 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.Month;
 import java.time.Period;
 import java.time.ZoneId;
 import java.util.*;
@@ -17,9 +16,7 @@ public class PupilTask {
 
     private ArrayList<Pupil> pupilArrayList = new ArrayList<>();
     private Faker faker = new Faker();
-    Stream<Pupil> pupilStream;
     DateFormat format = new SimpleDateFormat("dd/mm/yyyy");
-    UUID uuid;
 
     public PupilTask() throws ParseException {
         init();

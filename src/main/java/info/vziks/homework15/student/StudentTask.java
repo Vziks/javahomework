@@ -3,7 +3,6 @@ package info.vziks.homework15.student;
 import com.github.javafaker.Faker;
 import javafx.util.Pair;
 
-import java.sql.Array;
 import java.text.ParseException;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -19,7 +18,7 @@ public class StudentTask {
     }
 
     private void init() {
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 200; i++) {
             Student student = new Student(
                     faker.name().username()
             );
@@ -31,24 +30,33 @@ public class StudentTask {
         }
 
 
-        for (Student item :
-                studentArrayList) {
-            System.out.println(item);
-
-        }
+//        for (Student item :
+//                studentArrayList) {
+//            System.out.println(item);
+//
+//        }
     }
 
     public void getUniqueProfession() {
-
         studentArrayList
                 .stream()
-                .flatMap(std -> std.getProfessions().stream()
-                        .map(sbj -> new Pair<>(sbj, std)))
-                .collect(Collectors.toMap(Pair::getKey, Pair::getValue, (a, b) -> null))
+                .flatMap(st -> st.getProfessions().stream().map(subj -> new Pair<>(subj, st)))
+                .collect(Collectors.toMap(
+                        Pair::getKey,
+                        x -> {
+                            List<Student> list = new ArrayList<>();
+                            list.add(x.getValue());
+                            return list;
+                        },
+                        (a, b) -> {
+                            a.addAll(b);
+                            return a;
+                        }
+                ))
                 .values()
                 .stream()
-                .distinct()
-                .collect(Collectors.toList())
-                .forEach(System.out::println);
+                .filter(s -> s.size() == 1)
+                .forEachOrdered(System.out::println);
+
     }
 }
