@@ -45,7 +45,8 @@ public class Task153Command implements Command {
 //            9. Собрать в список всех учеников с именем=someName
             System.out.println();
             for (Pupil pupil :
-                    pupilTask.getGroupByName("Ivory")) {
+//                    pupilTask.getGroupByName("Ivory")) {
+                    pupilTask.getGroupByName(null)) {
                 System.out.println(pupil);
             }
             System.out.println();
