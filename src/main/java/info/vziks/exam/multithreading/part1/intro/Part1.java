@@ -1,4 +1,4 @@
-package info.vziks.exam.multithreading.part1;
+package info.vziks.exam.multithreading.part1.intro;
 
 import java.util.Map;
 
@@ -17,7 +17,6 @@ public class Part1 {
         System.out.println("classMyThread1.getName() " + myExtendsThread1.getName());
         // Name: Thread-1
         System.out.println("classMyThread2.getName() " + myExtendsThread2.getName());
-
 
         MyRunnableThread myRunnableThread1 = new MyRunnableThread();
         MyRunnableThread myRunnableThread2 = new MyRunnableThread();
@@ -44,7 +43,6 @@ public class Part1 {
             }
         }
 
-
         CheckMyRunnableThread checkMyRunnableThread1 = new CheckMyRunnableThread();
         CheckMyRunnableThread checkMyRunnableThread2 = new CheckMyRunnableThread();
         CheckMyRunnableThread checkMyRunnableThread3 = new CheckMyRunnableThread();
@@ -54,7 +52,6 @@ public class Part1 {
         checkMyRunnable1.start();
         checkMyRunnable2.start();
         checkMyRunnable3.start();
-
     }
 }
 

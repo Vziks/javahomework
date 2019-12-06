@@ -1,4 +1,4 @@
-package info.vziks.exam.multithreading.part1;
+package info.vziks.exam.multithreading.part1.intro;
 
 public class MyRunnableThread implements Runnable {
     @Override
