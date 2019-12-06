@@ -6,9 +6,9 @@ public class Part2 {
         Thread checkMyRunnable1 = new Thread(new CheckMyRunnableThread("checkMyRunnable1"));
         Thread checkMyRunnable2 = new Thread(new CheckMyRunnableThread("checkMyRunnable2"));
         Thread checkMyRunnable3 = new Thread(new CheckMyRunnableThread("checkMyRunnable3"));
-        checkMyRunnable1.setPriority(1);
-        checkMyRunnable2.setPriority(5);
-        checkMyRunnable3.setPriority(10);
+        checkMyRunnable1.setPriority(Thread.MIN_PRIORITY);
+        checkMyRunnable2.setPriority(Thread.NORM_PRIORITY);
+        checkMyRunnable3.setPriority(Thread.MAX_PRIORITY);
         checkMyRunnable1.start();
         checkMyRunnable2.start();
         checkMyRunnable3.start();
