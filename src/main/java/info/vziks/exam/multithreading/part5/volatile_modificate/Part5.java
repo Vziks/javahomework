@@ -1,8 +1,6 @@
 package info.vziks.exam.multithreading.part5.volatile_modificate;
 
 
-import java.util.Arrays;
-
 public class Part5 {
 
     private static volatile int value = 0;
