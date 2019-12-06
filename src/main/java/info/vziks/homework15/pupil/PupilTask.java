@@ -10,7 +10,6 @@ import java.time.Period;
 import java.time.ZoneId;
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class PupilTask {
 
@@ -112,7 +111,7 @@ public class PupilTask {
 
     public List<Pupil> getGroupByName(String name) {
         return pupilArrayList.stream()
-                .filter(i -> name.equals(i.getName()))
+                .filter(i -> i.getName().equals(name))
                 .collect(Collectors.toList());
     }
 
