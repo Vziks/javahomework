@@ -1,7 +1,6 @@
 package info.vziks.lessons.annotation.work.two;
 
 
-import info.vziks.lessons.annotation.work.two.annotation.Container;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashSet;

@@ -10,7 +10,7 @@ public class Resource {
         this.value = value;
     }
 
-    public synchronized void increaseValue() {
+    public void increaseValue() {
         if (rand.nextBoolean()) {
             try {
                 Thread.sleep(100);

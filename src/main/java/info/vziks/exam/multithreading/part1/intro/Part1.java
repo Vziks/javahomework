@@ -11,6 +11,7 @@ public class Part1 {
 
         MyExtendsThread myExtendsThread2 = new MyExtendsThread();
         myExtendsThread2.start();
+
         // Name: main
         System.out.println("Thread.currentThread().getName() " + Thread.currentThread().getName());
         // Name: Thread-0

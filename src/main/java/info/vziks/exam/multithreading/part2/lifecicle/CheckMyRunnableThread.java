@@ -24,7 +24,8 @@ public class CheckMyRunnableThread implements Runnable {
                  проверка его наступления происходила как можно чаще. В этом случае можно
                  поместить проверку события и метод Thread.yield() в цикл:
                  */
-                Thread.yield();            }
+                Thread.yield();
+            }
             if (rand.nextBoolean()) {
                 try {
                     Thread.sleep(500);
