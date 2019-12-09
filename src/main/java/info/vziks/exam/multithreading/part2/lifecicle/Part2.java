@@ -14,8 +14,8 @@ public class Part2 {
         checkMyRunnable3.start();
 
         try {
-            checkMyRunnable2.join();
             checkMyRunnable1.join();
+            checkMyRunnable2.join();
 //            Дождаться выполения потока с именем checkMyRunnable2 и
 //            только потом отдать общему стеку, т.е. блок main, т.к. это отдельный
 //            поток выполниться только после checkMyRunnable2
