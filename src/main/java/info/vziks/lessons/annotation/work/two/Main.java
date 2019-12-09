@@ -1,16 +1,24 @@
 package info.vziks.lessons.annotation.work.two;
 
-import java.io.IOException;
+
+import info.vziks.lessons.annotation.work.two.annotation.Container;
+
+import java.lang.reflect.InvocationTargetException;
 import java.util.HashSet;
 import java.util.Set;
 
 public class Main {
-    public static void main(String[] args) throws InstantiationException, IllegalAccessException, IOException {
+
+    public static void main(String[] args) {
         Set<Class> classes = new HashSet<>();
         classes.add(ServerSettings.class);
         classes.add(Server.class);
         Container container = new Container(classes);
-        container.init();
+        try {
+            container.init();
+        } catch (NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
+            e.printStackTrace();
+        }
 
     }
 }
