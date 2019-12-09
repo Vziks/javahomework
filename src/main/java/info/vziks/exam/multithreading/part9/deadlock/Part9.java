@@ -4,9 +4,11 @@ public class Part9 {
     public static void main(String[] args) {
 
 
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 10; i++) {
             RecourseA recourseA = new RecourseA();
             RecourseB recourseB = new RecourseB();
+            recourseA.recourseB = recourseB;
+            recourseB.recourseA = recourseA;
             recourseA.start();
             recourseB.start();
         }
