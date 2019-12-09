@@ -1,6 +1,7 @@
 package info.vziks.lessons.annotation.work.two;
 
-import lesson20.task.diContainer.ConfigClass;
+
+import info.vziks.lessons.annotation.work.two.annotation.ConfigClass;
 
 @ConfigClass(prefix="server")
 public class ServerSettings {

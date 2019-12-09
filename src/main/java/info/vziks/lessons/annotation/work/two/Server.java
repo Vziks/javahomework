@@ -1,8 +1,9 @@
 package info.vziks.lessons.annotation.work.two;
 
-import lesson20.task.diContainer.InitClass;
-import lesson20.task.diContainer.InitProp;
-import lesson20.task.diContainer.RunMethod;
+
+import info.vziks.lessons.annotation.work.two.annotation.InitClass;
+import info.vziks.lessons.annotation.work.two.annotation.InitProp;
+import info.vziks.lessons.annotation.work.two.annotation.RunMethod;
 
 @InitClass
 public class Server {
