@@ -21,7 +21,11 @@ public class MultiParser {
     private int numberOfThreads = Runtime.getRuntime().availableProcessors();
 
     public MultiParser(String fileName) {
-        file = new File(Objects.requireNonNull(loader.getResource(fileName)).getFile());
+        try {
+            file = new File(Objects.requireNonNull(loader.getResource(fileName)).getFile());
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
     }
 
     private void init() throws InterruptedException, IOException {
