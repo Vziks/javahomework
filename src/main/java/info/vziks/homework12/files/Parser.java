@@ -26,8 +26,6 @@ public class Parser {
         setLoader(Parser.class.getClassLoader());
         this.file = new File(Objects.requireNonNull(loader.getResource(fileName)).getFile());
         this.lines = Files.readAllLines(getFile().toPath());
-//        Files.lines(getFile().toPath()).forEach();
-//        this.lines1 =
     }
 
 
