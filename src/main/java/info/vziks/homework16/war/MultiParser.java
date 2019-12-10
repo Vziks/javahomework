@@ -43,7 +43,7 @@ public class MultiParser {
     }
 
     private void setProportion() {
-        this.proportion = fullStringArray.size() / Runtime.getRuntime().availableProcessors();
+        this.proportion = fullStringArray.size() / availableProcessors;
     }
 
 
