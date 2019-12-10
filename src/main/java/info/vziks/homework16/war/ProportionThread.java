@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class ProportionThread implements Runnable {
     private List<String> proportionArray;
-    private Map<String, Integer> stringIntegerHashMap = new HashMap<>();
+    private volatile static Map<String, Integer> stringIntegerHashMap = new HashMap<>();
     Thread thread;
 
     public ProportionThread(List<String> proportionArray) throws InterruptedException {
@@ -23,7 +23,7 @@ public class ProportionThread implements Runnable {
         }
     }
 
-    public Map<String, Integer> getStringIntegerHashMap() {
+    public static Map<String, Integer> getStringIntegerHashMap() {
         return stringIntegerHashMap;
     }
 }

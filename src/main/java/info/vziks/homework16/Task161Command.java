@@ -12,6 +12,7 @@ public class Task161Command implements Command {
 
         try {
             multiParser = new MultiParser("wp.txt");
+//            multiParser.setNumberOfThreads(40);
             multiParser.start();
         } catch (InterruptedException | IOException e) {
             e.printStackTrace();

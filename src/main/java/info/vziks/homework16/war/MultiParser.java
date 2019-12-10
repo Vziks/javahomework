@@ -13,8 +13,6 @@ public class MultiParser {
     private List<String> fullStringArray = new ArrayList<>();
     // Array of ProportionThread instance
     private List<ProportionThread> proportionThreadArrayList = new ArrayList<>();
-    // Summary HashMap <Word, Count>
-    private Map<String, Integer> stringIntegerHashMap = new HashMap<>();
     // Number of records seized
     private int proportion;
     // Number of threads, default available processors
@@ -32,20 +30,10 @@ public class MultiParser {
         fillStringArray();
         setProportion();
         distributeThread();
-        combine();
     }
 
     public void start() throws InterruptedException, IOException {
         init();
-    }
-
-    private void combine() {
-        for (ProportionThread item :
-                proportionThreadArrayList) {
-            for (Map.Entry<String, Integer> entity : item.getStringIntegerHashMap().entrySet()) {
-                stringIntegerHashMap.merge(entity.getKey(), entity.getValue(), Integer::sum);
-            }
-        }
     }
 
     private void setProportion() {
@@ -62,7 +50,7 @@ public class MultiParser {
         for (int i = 0, check = 1; i < this.numberOfThreads; i++, check++) {
             proportionThreadArrayList.add(new ProportionThread(
                     fullStringArray.subList(i * proportion,
-                            this.numberOfThreads == check ? fullStringArray.size() : check * proportion - 1)));
+                            numberOfThreads == check ? fullStringArray.size() - 1 : check * proportion)));
         }
     }
 
@@ -85,11 +73,11 @@ public class MultiParser {
 
     public void printTop100Words() {
         System.out.println("Top 100 words");
-        stringIntegerHashMap
+        ProportionThread.getStringIntegerHashMap()
                 .entrySet()
                 .stream()
                 .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
-                .limit(100)
+                .limit(10)
                 .forEach(System.out::println);
     }
 }
