@@ -16,7 +16,8 @@ public class MultiParser {
     // Repository of all words from a file
     private List<String> fullStringArray = new ArrayList<>();
     // Array of ProportionThread instance
-    private Map<Integer, Future> integerFutureMap = new HashMap<>();
+//    private Map<Integer, Future> integerFutureMap = new HashMap<>();
+    private List<Future> integerFutureMap = new ArrayList<>();
     // Number of records seized
     private int proportion;
     // Number of threads, default available processors
@@ -56,7 +57,7 @@ public class MultiParser {
     private void distributeThread() {
 
         for (int i = 0, check = 1; i < this.numberOfThreads; i++, check++) {
-            integerFutureMap.put(i, service.submit(new ProportionThread(
+            integerFutureMap.add(service.submit(new ProportionThread(
                     fullStringArray.subList(i * proportion,
                             numberOfThreads == check ? fullStringArray.size() - 1 : check * proportion), summaryClass)));
         }
@@ -82,9 +83,9 @@ public class MultiParser {
 
     public void printTop100Words() {
 
-        integerFutureMap.forEach((key, value) -> {
+        integerFutureMap.forEach((a) -> {
             try {
-                value.get();
+                a.get();
             } catch (InterruptedException | ExecutionException e) {
                 e.printStackTrace();
             }
