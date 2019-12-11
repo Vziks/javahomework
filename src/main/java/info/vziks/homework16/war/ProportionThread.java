@@ -1,29 +1,28 @@
 package info.vziks.homework16.war;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class ProportionThread implements Runnable {
     private List<String> proportionArray;
-    private volatile static Map<String, Integer> stringIntegerHashMap = new HashMap<>();
+    private SummaryClass summaryClass;
     Thread thread;
 
-    public ProportionThread(List<String> proportionArray) throws InterruptedException {
+    public ProportionThread(List<String> proportionArray,  SummaryClass summaryClass) {
         this.proportionArray = proportionArray;
+        this.summaryClass = summaryClass;
         thread = new Thread(this);
-        thread.start();
-        thread.join();
     }
 
     @Override
     public void run() {
+
         for (String string : proportionArray) {
-            stringIntegerHashMap.merge(string, 1, Integer::sum);
+//            System.out.println(Thread.currentThread().getName());
+            this.summaryClass.add(string);
         }
     }
 
-    public static Map<String, Integer> getStringIntegerHashMap() {
-        return stringIntegerHashMap;
+    public Thread getThread() {
+        return thread;
     }
 }
