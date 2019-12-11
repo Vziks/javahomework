@@ -52,6 +52,10 @@ public class MultiParser {
                     fullStringArray.subList(i * proportion,
                             numberOfThreads == check ? fullStringArray.size() - 1 : check * proportion)));
         }
+
+        for (ProportionThread item : proportionThreadArrayList) {
+            item.getThread().join();
+        }
     }
 
     private void fillStringArray() throws IOException {

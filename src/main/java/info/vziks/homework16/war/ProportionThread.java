@@ -9,11 +9,10 @@ public class ProportionThread implements Runnable {
     private volatile static Map<String, Integer> stringIntegerHashMap = new HashMap<>();
     Thread thread;
 
-    public ProportionThread(List<String> proportionArray) throws InterruptedException {
+    public ProportionThread(List<String> proportionArray)  {
         this.proportionArray = proportionArray;
         thread = new Thread(this);
         thread.start();
-        thread.join();
     }
 
     @Override
@@ -25,5 +24,9 @@ public class ProportionThread implements Runnable {
 
     public static Map<String, Integer> getStringIntegerHashMap() {
         return stringIntegerHashMap;
+    }
+
+    public Thread getThread() {
+        return thread;
     }
 }
