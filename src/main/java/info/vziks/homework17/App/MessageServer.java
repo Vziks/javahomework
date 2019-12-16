@@ -22,7 +22,7 @@ public class MessageServer extends Config {
                 connection = new Connection(socket);
                 System.out.println(socket.getRemoteSocketAddress());
                 socketAddressConnectionMap.put(socket.getRemoteSocketAddress(), connection);
-                new Thread(new Reader(connection));
+                new Thread(new Reader(connection)).start();
             }
         }
     }
