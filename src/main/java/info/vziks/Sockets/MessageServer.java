@@ -39,7 +39,7 @@ public class MessageServer {
             Properties properties = new Properties();
             properties.load(inputStream);
 
-            MessageServer messageServer = new MessageServer(Integer.parseInt(properties.getProperty("port")));
+            MessageServer messageServer = new MessageServer(Integer.parseInt(properties.getProperty("server.port")));
             try {
                 messageServer.start();
             } catch (IOException e) {

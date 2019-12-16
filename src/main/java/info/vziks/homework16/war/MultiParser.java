@@ -41,7 +41,7 @@ public class MultiParser {
         distributeThread();
     }
 
-    public void start() throws InterruptedException, IOException {
+    public void start() throws IOException {
         init();
     }
 
@@ -92,6 +92,7 @@ public class MultiParser {
         });
 
         service.shutdown();
+
 
         System.out.println("Top 100 words");
 
