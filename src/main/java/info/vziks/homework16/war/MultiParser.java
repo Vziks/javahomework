@@ -4,6 +4,10 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.*;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public class MultiParser {
 
@@ -12,11 +16,16 @@ public class MultiParser {
     // Repository of all words from a file
     private List<String> fullStringArray = new ArrayList<>();
     // Array of ProportionThread instance
-    private List<ProportionThread> proportionThreadArrayList = new ArrayList<>();
+//    private Map<Integer, Future> integerFutureMap = new HashMap<>();
+    private List<Future> integerFutureMap = new ArrayList<>();
     // Number of records seized
     private int proportion;
     // Number of threads, default available processors
     private int numberOfThreads = Runtime.getRuntime().availableProcessors();
+    // summaryClass
+    SummaryClass summaryClass = new SummaryClass();
+
+    ExecutorService service = Executors.newCachedThreadPool();
 
     public MultiParser(String fileName) {
         try {
@@ -26,13 +35,13 @@ public class MultiParser {
         }
     }
 
-    private void init() throws InterruptedException, IOException {
+    private void init() throws IOException {
         fillStringArray();
         setProportion();
         distributeThread();
     }
 
-    public void start() throws InterruptedException, IOException {
+    public void start() throws IOException {
         init();
     }
 
@@ -45,12 +54,12 @@ public class MultiParser {
         return this;
     }
 
-    private void distributeThread() throws InterruptedException {
+    private void distributeThread() {
 
         for (int i = 0, check = 1; i < this.numberOfThreads; i++, check++) {
-            proportionThreadArrayList.add(new ProportionThread(
+            integerFutureMap.add(service.submit(new ProportionThread(
                     fullStringArray.subList(i * proportion,
-                            numberOfThreads == check ? fullStringArray.size() - 1 : check * proportion)));
+                            numberOfThreads == check ? fullStringArray.size() - 1 : check * proportion), summaryClass)));
         }
 
         for (ProportionThread item : proportionThreadArrayList) {
@@ -59,6 +68,7 @@ public class MultiParser {
     }
 
     private void fillStringArray() throws IOException {
+
         for (String line : Files.readAllLines(file.toPath())) {
             if (!"".equals(line)) {
                 String[] wordsSplit = line
@@ -76,12 +86,25 @@ public class MultiParser {
     }
 
     public void printTop100Words() {
+
+        integerFutureMap.forEach((a) -> {
+            try {
+                a.get();
+            } catch (InterruptedException | ExecutionException e) {
+                e.printStackTrace();
+            }
+        });
+
+        service.shutdown();
+
+
         System.out.println("Top 100 words");
-        ProportionThread.getStringIntegerHashMap()
+
+        summaryClass.getStringIntegerHashMap()
                 .entrySet()
                 .stream()
                 .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
-                .limit(10)
+                .limit(100)
                 .forEach(System.out::println);
     }
 }

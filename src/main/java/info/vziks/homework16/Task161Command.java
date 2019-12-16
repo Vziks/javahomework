@@ -14,7 +14,7 @@ public class Task161Command implements Command {
             multiParser = new MultiParser("wp.txt");
 //            multiParser.setNumberOfThreads(40);
             multiParser.start();
-        } catch (InterruptedException | IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         multiParser.printTop100Words();
