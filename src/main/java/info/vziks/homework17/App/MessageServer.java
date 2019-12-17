@@ -13,7 +13,7 @@ public class MessageServer extends Config {
 
     public void start() throws IOException {
 
-        new Thread(new Writer()).start();
+        new Thread(new Reader()).start();
         try (ServerSocket serverSocket = new ServerSocket(this.getPort())) {
             System.out.println("Server started...");
             Connection connection;
@@ -22,15 +22,15 @@ public class MessageServer extends Config {
                 connection = new Connection(socket);
                 System.out.println(socket.getRemoteSocketAddress());
                 socketAddressConnectionMap.put(socket.getRemoteSocketAddress(), connection);
-                new Thread(new Reader(connection)).start();
+                new Thread(new Writer(connection)).start();
             }
         }
     }
 
-    class Reader implements Runnable {
+    class Writer implements Runnable {
         private Connection connection;
 
-        public Reader(Connection connection) {
+        public Writer(Connection connection) {
             this.connection = connection;
         }
 
@@ -53,7 +53,7 @@ public class MessageServer extends Config {
         }
     }
 
-    class Writer implements Runnable {
+    class Reader implements Runnable {
         @Override
         public void run() {
             while (!Thread.currentThread().isInterrupted()) {
