@@ -5,19 +5,17 @@ import java.io.InputStream;
 import java.util.Properties;
 
 abstract public class Config {
-    private InputStream input;
     private Properties properties;
     private int port;
     private String ip;
 
     public Config() {
-        this.input =
-                Config.class
-                        .getClassLoader()
-                        .getResourceAsStream("config.properties");
+        InputStream input = Config.class
+                .getClassLoader()
+                .getResourceAsStream("config.properties");
         try {
             properties = new Properties();
-            properties.load(this.input);
+            properties.load(input);
         } catch (IOException e) {
             e.printStackTrace();
         }
